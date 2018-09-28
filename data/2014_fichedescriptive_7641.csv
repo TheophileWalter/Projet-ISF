@@ -1,0 +1,381 @@
+﻿Région;Départements;Code commune (INSEE);Commune;nombre de redevables;patrimoine moyen en €;impôt moyen en €
+ALSACE                        ;BAS-RHIN                      ;67180;HAGUENAU                                          ;142;2 834 591;12 622
+ALSACE                        ;BAS-RHIN                      ;67218;ILLKIRCH GRAFFENSTADEN                            ;102;2 167 168;7 891
+ALSACE                        ;BAS-RHIN                      ;67447;SCHILTIGHEIM                                      ;65;2 401 983;8 414
+ALSACE                        ;BAS-RHIN                      ;67482;STRASBOURG                                        ;1 697;3 092 175;13 167
+ALSACE                        ;HAUT-RHIN                     ;68066;COLMAR                                            ;278;2 566 795;11 328
+ALSACE                        ;HAUT-RHIN                     ;68224;MULHOUSE                                          ;352;2 844 362;12 124
+ALSACE                        ;HAUT-RHIN                     ;68297;SAINT LOUIS                                       ;62;2 605 264;11 677
+AQUITAINE                     ;DORDOGNE                      ;24037;BERGERAC                                          ;110;2 057 546;7 328
+AQUITAINE                     ;DORDOGNE                      ;24322;PERIGUEUX                                         ;104;2 311 857;9 437
+AQUITAINE                     ;GIRONDE                       ;33063;BORDEAUX                                          ;2 242;2 650 935;11 094
+AQUITAINE                     ;GIRONDE                       ;33162;EYSINES                                           ;86;2 186 755;8 207
+AQUITAINE                     ;GIRONDE                       ;33192;GRADIGNAN                                         ;139;2 460 728;9 495
+AQUITAINE                     ;GIRONDE                       ;33199;GUJAN-MESTRAS                                     ;78;2 174 550;7 130
+AQUITAINE                     ;GIRONDE                       ;33529;LA TESTE DE BUCH                                  ;263;2 390 831;8 921
+AQUITAINE                     ;GIRONDE                       ;33069;LE BOUSCAT                                        ;292;3 306 298;10 994
+AQUITAINE                     ;GIRONDE                       ;33243;LIBOURNE                                          ;135;2 465 286;8 534
+AQUITAINE                     ;GIRONDE                       ;33281;MERIGNAC                                          ;242;2 284 852;8 496
+AQUITAINE                     ;GIRONDE                       ;33318;PESSAC                                            ;224;2 317 033;8 574
+AQUITAINE                     ;GIRONDE                       ;33449;SAINT-MEDARD-EN-JALLES                            ;95;2 178 018;7 347
+AQUITAINE                     ;GIRONDE                       ;33522;TALENCE                                           ;165;2 315 868;8 984
+AQUITAINE                     ;GIRONDE                       ;33550;VILLENAVE-D'ORNON                                 ;86;2 819 088;7 996
+AQUITAINE                     ;LANDES                        ;40088;DAX                                               ;106;2 693 066;11 360
+AQUITAINE                     ;LANDES                        ;40192;MONT-DE-MARSAN                                    ;95;2 176 430;7 792
+AQUITAINE                     ;LOT-ET-GARONNE                ;47001;AGEN                                              ;105;2 444 398;10 572
+AQUITAINE                     ;LOT-ET-GARONNE                ;47323;VILLENEUVE SUR LOT                                ;62;2 304 026;8 261
+AQUITAINE                     ;PYRENEES-ATLANTIQUES          ;64024;ANGLET                                            ;379;2 382 014;8 541
+AQUITAINE                     ;PYRENEES-ATLANTIQUES          ;64102;BAYONNE                                           ;233;2 554 558;11 562
+AQUITAINE                     ;PYRENEES-ATLANTIQUES          ;64122;BIARRITZ                                          ;499;2 494 300;9 785
+AQUITAINE                     ;PYRENEES-ATLANTIQUES          ;64445;PAU                                               ;417;2 657 743;8 517
+AUVERGNE                      ;ALLIER                        ;03185;MONTLUCON                                         ;115;2 229 932;7 076
+AUVERGNE                      ;ALLIER                        ;03310;VICHY                                             ;160;2 422 487;8 697
+AUVERGNE                      ;CANTAL                        ;15014;AURILLAC                                          ;107;2 492 085;10 143
+AUVERGNE                      ;PUY-DE-DOME                   ;63113;CLERMONT-FERRAND                                  ;459;2 522 821;11 447
+BASSE-NORMANDIE               ;CALVADOS                      ;14118;CAEN                                              ;574;2 554 866;10 236
+BASSE-NORMANDIE               ;MANCHE                        ;50129;CHERBOURG OCTEVILLE                               ;98;2 496 793;9 348
+BASSE-NORMANDIE               ;MANCHE                        ;50502;SAINT LO                                          ;52;2 339 274;8 049
+BASSE-NORMANDIE               ;ORNE                          ;61001;ALENCON                                           ;74;2 338 829;9 137
+BOURGOGNE                     ;COTE-D'OR                     ;21054;BEAUNE                                            ;144;2 734 065;9 681
+BOURGOGNE                     ;COTE-D'OR                     ;21231;DIJON                                             ;651;2 606 741;9 776
+BOURGOGNE                     ;NIEVRE                        ;58194;NEVERS                                            ;92;2 565 077;11 534
+BOURGOGNE                     ;SAONE-ET-LOIRE                ;71076;CHALON SUR SAONE                                  ;136;2 273 792;8 471
+BOURGOGNE                     ;SAONE-ET-LOIRE                ;71270;MACON                                             ;113;2 815 286;14 084
+BOURGOGNE                     ;YONNE                         ;89024;AUXERRE                                           ;123;2 365 008;10 673
+BOURGOGNE                     ;YONNE                         ;89387;SENS                                              ;105;2 549 067;10 186
+BRETAGNE                      ;COTES-D'ARMOR                 ;22113;LANNION                                           ;77;2 149 540;7 739
+BRETAGNE                      ;COTES-D'ARMOR                 ;22278;SAINT-BRIEUC                                      ;171;2 322 805;8 122
+BRETAGNE                      ;FINISTERE                     ;29019;BREST                                             ;270;2 780 051;10 239
+BRETAGNE                      ;FINISTERE                     ;29232;QUIMPER                                           ;214;2 382 947;7 642
+BRETAGNE                      ;ILLE-ET-VILAINE               ;35115;FOUGERES                                          ;71;2 311 428;8 043
+BRETAGNE                      ;ILLE-ET-VILAINE               ;35238;RENNES                                            ;1 182;2 633 336;10 769
+BRETAGNE                      ;ILLE-ET-VILAINE               ;35288;SAINT MALO                                        ;422;2 477 362;9 849
+BRETAGNE                      ;MORBIHAN                      ;56121;LORIENT                                           ;142;2 429 032;9 276
+BRETAGNE                      ;MORBIHAN                      ;56260;VANNES                                            ;446;2 387 020;8 783
+CENTRE                        ;CHER                          ;18033;BOURGES                                           ;247;2 220 650;7 708
+CENTRE                        ;EURE-ET-LOIR                  ;28085;CHARTRES                                          ;245;2 470 387;10 147
+CENTRE                        ;EURE-ET-LOIR                  ;28134;DREUX                                             ;66;2 544 428;12 091
+CENTRE                        ;INDRE                         ;36044;CHATEAUROUX                                       ;144;2 533 322;10 970
+CENTRE                        ;INDRE-ET-LOIRE                ;37122;JOUE LES TOURS                                    ;83;2 349 681;9 639
+CENTRE                        ;INDRE-ET-LOIRE                ;37261;TOURS                                             ;669;2 368 174;9 154
+CENTRE                        ;LOIR-ET-CHER                  ;41018;BLOIS                                             ;158;2 484 104;10 736
+CENTRE                        ;LOIRET                        ;45232;OLIVET                                            ;178;2 278 223;8 729
+CENTRE                        ;LOIRET                        ;45234;ORLEANS                                           ;563;2 320 265;9 230
+CHAMPAGNE-ARDENNE             ;ARDENNES                      ;08105;CHARLEVILLE MEZIERES                              ;127;2 172 691;7 901
+CHAMPAGNE-ARDENNE             ;AUBE                          ;10387;TROYES                                            ;210;2 844 484;12 961
+CHAMPAGNE-ARDENNE             ;HAUTE-MARNE                   ;52448;SAINT-DIZIER                                      ;54;3 474 382;10 078
+CHAMPAGNE-ARDENNE             ;MARNE                         ;51108;CHALONS EN CHAMPAGNE                              ;123;2 319 208;8 819
+CHAMPAGNE-ARDENNE             ;MARNE                         ;51230;EPERNAY                                           ;100;2 624 923;11 340
+CHAMPAGNE-ARDENNE             ;MARNE                         ;51454;REIMS                                             ;759;2 547 978;10 251
+CORSE                         ;CORSE-DU-SUD                  ;2A004;AJACCIO                                           ;252;2 685 028;11 673
+CORSE                         ;HAUTE-CORSE                   ;2B033;BASTIA                                            ;105;2 561 976;12 311
+FRANCHE-COMTE                 ;DOUBS                         ;25056;BESANCON                                          ;380;2 464 989;9 275
+FRANCHE-COMTE                 ;DOUBS                         ;25388;MONTBELIARD                                       ;59;1 975 678;6 737
+FRANCHE-COMTE                 ;JURA                          ;39198;DOLE                                              ;63;2 269 495;7 344
+FRANCHE-COMTE                 ;TERRITOIRE DE BELFORT         ;90010;BELFORT                                           ;104;2 599 060;12 651
+GUADELOUPE                    ;GUADELOUPE                    ;97113;LE GOSIER                                         ;86;2 612 963;11 524
+HAUTE-NORMANDIE               ;EURE                          ;27229;EVREUX                                            ;144;2 321 069;9 101
+HAUTE-NORMANDIE               ;EURE                          ;27681;VERNON                                            ;90;2 179 962;7 669
+HAUTE-NORMANDIE               ;SEINE-MARITIME                ;76217;DIEPPE                                            ;95;2 171 153;7 934
+HAUTE-NORMANDIE               ;SEINE-MARITIME                ;76351;LE HAVRE                                          ;371;2 440 129;9 924
+HAUTE-NORMANDIE               ;SEINE-MARITIME                ;76540;ROUEN                                             ;530;2 366 472;9 555
+ILE-DE-FRANCE                 ;ESSONNE                       ;91027;ATHIS MONS                                        ;59;2 497 899;12 057
+ILE-DE-FRANCE                 ;ESSONNE                       ;91103;BRETIGNY SUR ORGE                                 ;52;2 200 683;7 635
+ILE-DE-FRANCE                 ;ESSONNE                       ;91114;BRUNOY                                            ;159;2 416 483;9 770
+ILE-DE-FRANCE                 ;ESSONNE                       ;91174;CORBEIL ESSONNES                                  ;61;2 598 081;10 685
+ILE-DE-FRANCE                 ;ESSONNE                       ;91201;DRAVEIL                                           ;134;2 530 803;9 197
+ILE-DE-FRANCE                 ;ESSONNE                       ;91223;ETAMPES                                           ;66;2 440 512;9 794
+ILE-DE-FRANCE                 ;ESSONNE                       ;91272;GIF SUR YVETTE                                    ;355;2 267 688;8 396
+ILE-DE-FRANCE                 ;ESSONNE                       ;91345;LONGJUMEAU                                        ;57;2 300 579;9 812
+ILE-DE-FRANCE                 ;ESSONNE                       ;91377;MASSY                                             ;83;2 068 179;7 510
+ILE-DE-FRANCE                 ;ESSONNE                       ;91421;MONTGERON                                         ;148;2 327 800;8 161
+ILE-DE-FRANCE                 ;ESSONNE                       ;91434;MORSANG SUR ORGE                                  ;74;2 413 824;9 762
+ILE-DE-FRANCE                 ;ESSONNE                       ;91477;PALAISEAU                                         ;225;3 629 705;12 683
+ILE-DE-FRANCE                 ;ESSONNE                       ;91589;SAVIGNY SUR ORGE                                  ;123;2 084 333;7 320
+ILE-DE-FRANCE                 ;ESSONNE                       ;91549;STE GENEVIEVE DES BOIS                            ;136;2 290 492;8 363
+ILE-DE-FRANCE                 ;ESSONNE                       ;91687;VIRY CHATILLON                                    ;54;1 957 414;6 559
+ILE-DE-FRANCE                 ;ESSONNE                       ;91691;YERRES                                            ;119;2 277 101;8 512
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92002;ANTONY                                            ;783;2 244 597;7 960
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92004;ASNIERES                                          ;749;2 376 631;8 832
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92007;BAGNEUX                                           ;60;2 072 313;7 178
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92009;BOIS-COLOMBES                                     ;305;2 253 920;8 268
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92012;BOULOGNE BILLANCOURT                              ;3 579;2 836 027;12 140
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92014;BOURG LA REINE                                    ;455;2 531 694;11 081
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92019;CHATENAY MALABRY                                  ;279;2 390 957;9 635
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92020;CHATILLON                                         ;236;2 191 720;7 751
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92023;CLAMART                                           ;619;2 483 157;10 488
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92024;CLICHY                                            ;108;2 207 329;8 724
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92025;COLOMBES                                          ;424;2 379 540;9 068
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92026;COURBEVOIE                                        ;990;2 244 298;8 363
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92032;FONTENAY AUX ROSES                                ;269;2 071 185;6 867
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92040;ISSY LES MOULINEAUX                               ;796;2 251 303;7 882
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92035;LA GARENNE COLOMBES                               ;310;2 315 217;8 872
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92060;LE PLESSIS ROBINSON                               ;185;2 112 168;7 828
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92044;LEVALLOIS-PERRET                                  ;1 230;2 884 883;10 650
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92046;MALAKOFF                                          ;154;2 204 564;7 587
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92048;MEUDON                                            ;949;2 593 127;10 388
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92049;MONTROUGE                                         ;396;2 546 633;11 744
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92050;NANTERRE                                          ;238;2 141 268;7 753
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92051;NEUILLY SUR SEINE                                 ;5 783;4 980 124;22 625
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92062;PUTEAUX                                           ;322;2 281 149;8 241
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92063;RUEIL MALMAISON                                   ;1 472;2 491 369;9 252
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92064;SAINT CLOUD                                       ;1 332;3 216 011;15 080
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92071;SCEAUX                                            ;752;2 628 978;11 352
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92072;SEVRES                                            ;618;2 541 572;9 889
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92073;SURESNES                                          ;589;2 509 922;10 181
+ILE-DE-FRANCE                 ;HAUTS-DE-SEINE                ;92075;VANVES                                            ;338;2 356 778;8 993
+ILE-DE-FRANCE                 ;PARIS                         ;75101;PARIS                                             ;734;3 536 821;16 940
+ILE-DE-FRANCE                 ;PARIS                         ;75102;PARIS                                             ;483;2 608 696;9 435
+ILE-DE-FRANCE                 ;PARIS                         ;75103;PARIS                                             ;1 110;3 067 424;13 793
+ILE-DE-FRANCE                 ;PARIS                         ;75104;PARIS                                             ;1 215;3 471 076;15 762
+ILE-DE-FRANCE                 ;PARIS                         ;75105;PARIS                                             ;2 582;2 837 795;12 617
+ILE-DE-FRANCE                 ;PARIS                         ;75106;PARIS                                             ;3 925;4 048 989;20 982
+ILE-DE-FRANCE                 ;PARIS                         ;75107;PARIS                                             ;5 675;5 093 870;27 874
+ILE-DE-FRANCE                 ;PARIS                         ;75108;PARIS                                             ;3 025;4 134 444;22 027
+ILE-DE-FRANCE                 ;PARIS                         ;75109;PARIS                                             ;1 761;2 676 108;11 298
+ILE-DE-FRANCE                 ;PARIS                         ;75110;PARIS                                             ;973;2 413 039;9 144
+ILE-DE-FRANCE                 ;PARIS                         ;75111;PARIS                                             ;2 076;2 475 009;10 236
+ILE-DE-FRANCE                 ;PARIS                         ;75112;PARIS                                             ;2 292;2 400 524;9 518
+ILE-DE-FRANCE                 ;PARIS                         ;75113;PARIS                                             ;2 016;2 470 009;9 930
+ILE-DE-FRANCE                 ;PARIS                         ;75114;PARIS                                             ;3 318;2 859 164;12 075
+ILE-DE-FRANCE                 ;PARIS                         ;75115;PARIS                                             ;6 602;2 631 645;11 349
+ILE-DE-FRANCE                 ;PARIS                         ;75116;PARIS                                             ;14 275;4 093 874;20 727
+ILE-DE-FRANCE                 ;PARIS                         ;75117;PARIS                                             ;6 076;3 068 509;14 193
+ILE-DE-FRANCE                 ;PARIS                         ;75118;PARIS                                             ;1 415;2 874 464;12 563
+ILE-DE-FRANCE                 ;PARIS                         ;75119;PARIS                                             ;1 029;2 430 451;9 082
+ILE-DE-FRANCE                 ;PARIS                         ;75120;PARIS                                             ;1 103;2 278 988;8 828
+ILE-DE-FRANCE                 ;SEINE-ET-MARNE                ;77058;BUSSY ST GEORGES                                  ;68;2 351 318;8 497
+ILE-DE-FRANCE                 ;SEINE-ET-MARNE                ;77108;CHELLES                                           ;123;2 178 735;8 405
+ILE-DE-FRANCE                 ;SEINE-ET-MARNE                ;77243;LAGNY SUR MARNE                                   ;93;3 034 771;12 000
+ILE-DE-FRANCE                 ;SEINE-ET-MARNE                ;77284;MEAUX                                             ;134;2 391 696;10 131
+ILE-DE-FRANCE                 ;SEINE-ET-MARNE                ;77288;MELUN                                             ;115;2 566 084;11 597
+ILE-DE-FRANCE                 ;SEINE-ET-MARNE                ;77350;OZOIR LA FERRIERE                                 ;78;2 668 642;12 345
+ILE-DE-FRANCE                 ;SEINE-ET-MARNE                ;77373;PONTAULT COMBAULT                                 ;65;2 146 863;7 836
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93001;AUBERVILLIERS                                     ;52;2 298 871;10 114
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93005;AULNAY SOUS BOIS                                  ;158;2 306 671;9 313
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93006;BAGNOLET                                          ;60;2 071 780;6 048
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93029;DRANCY                                            ;81;2 218 872;8 664
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93031;EPINAY SUR SEINE                                  ;54;2 063 337;7 401
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93032;GAGNY                                             ;118;2 219 398;8 117
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93045;LES LILAS                                         ;122;2 604 242;13 054
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93057;LES PAVILLONS SOUS BOIS                           ;88;2 105 412;7 463
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93046;LIVRY GARGAN                                      ;99;2 107 701;7 764
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93047;MONTFERMEIL                                       ;52;2 254 218;9 105
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93048;MONTREUIL SOUS BOIS                               ;230;2 287 457;8 445
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93049;NEUILLY PLAISANCE                                 ;71;1 943 513;6 510
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93051;NOISY LE GRAND                                    ;143;2 266 364;10 016
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93053;NOISY LE SEC                                      ;64;2 125 788;8 134
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93055;PANTIN                                            ;78;2 144 937;7 895
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93064;ROSNY SOUS BOIS                                   ;91;2 102 375;7 403
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93066;SAINT DENIS                                       ;53;2 367 602;8 513
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93070;SAINT OUEN                                        ;60;2 067 980;7 872
+ILE-DE-FRANCE                 ;SEINE-SAINT-DENIS             ;93077;VILLEMOMBLE                                       ;185;2 491 160;9 567
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95018;ARGENTEUIL                                        ;130;2 490 482;9 275
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95127;CERGY                                             ;84;2 109 919;6 780
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95176;CORMEILLES EN PARISIS                             ;131;2 201 066;8 325
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95197;DEUIL LA BARRE                                    ;106;2 040 345;6 787
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95203;EAUBONNE                                          ;137;2 031 894;6 687
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95219;ERMONT                                            ;100;1 985 201;6 491
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95252;FRANCONVILLE                                      ;59;2 727 008;15 181
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95306;HERBLAY                                           ;106;2 378 692;10 290
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95428;MONTMORENCY                                       ;283;2 667 973;11 267
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95500;PONTOISE                                          ;87;2 477 195;10 169
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95582;SANNOIS                                           ;72;2 354 164;8 290
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95555;ST GRATIEN                                        ;125;2 358 342;8 429
+ILE-DE-FRANCE                 ;VAL-D'OISE                    ;95607;TAVERNY                                           ;88;2 055 236;6 993
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94002;ALFORTVILLE                                       ;67;2 116 331;8 026
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94003;ARCUEIL                                           ;57;2 335 373;9 552
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94016;CACHAN                                            ;147;2 172 243;7 655
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94017;CHAMPIGNY SUR MARNE                               ;171;2 313 389;8 811
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94018;CHARENTON LE PONT                                 ;433;2 317 494;8 598
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94022;CHOISY LE ROI                                     ;83;2 276 997;9 064
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94028;CRETEIL                                           ;219;2 259 237;8 498
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94033;FONTENAY SOUS BOIS                                ;562;2 618 032;10 418
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94034;FRESNES                                           ;50;2 330 924;9 111
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94041;IVRY SUR SEINE                                    ;104;2 633 059;7 049
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94038;L'HAY LES ROSES                                   ;204;2 128 180;7 731
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94043;LE KREMLIN BICETRE                                ;60;2 154 653;7 456
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94058;LE PERREUX SUR MARNE                              ;426;2 338 962;8 540
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94046;MAISONS ALFORT                                    ;291;2 185 700;8 373
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94052;NOGENT SUR MARNE                                  ;730;2 726 342;11 946
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94067;SAINT MANDE                                       ;804;2 819 048;12 855
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94068;SAINT MAUR DES FOSSES                             ;1 566;2 605 408;10 144
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94071;SUCY EN BRIE                                      ;187;2 228 943;8 293
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94073;THIAIS                                            ;127;2 334 734;10 288
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94076;VILLEJUIF                                         ;96;2 324 187;8 417
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94079;VILLIERS SUR MARNE                                ;85;2 044 969;7 004
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94080;VINCENNES                                         ;1 000;2 348 477;8 796
+ILE-DE-FRANCE                 ;VAL-DE-MARNE                  ;94081;VITRY SUR SEINE                                   ;146;2 058 751;7 466
+ILE-DE-FRANCE                 ;YVELINES                      ;78146;CHATOU                                            ;638;2 562 482;9 896
+ILE-DE-FRANCE                 ;YVELINES                      ;78172;CONFLANS-SAINTE-HONORINE                          ;106;2 324 465;8 057
+ILE-DE-FRANCE                 ;YVELINES                      ;78208;ELANCOURT                                         ;67;1 961 186;6 752
+ILE-DE-FRANCE                 ;YVELINES                      ;78297;GUYANCOURT                                        ;63;1 981 679;5 980
+ILE-DE-FRANCE                 ;YVELINES                      ;78311;HOUILLES                                          ;135;1 951 628;6 396
+ILE-DE-FRANCE                 ;YVELINES                      ;78126;LA CELLE-SAINT-CLOUD                              ;514;2 720 511;11 614
+ILE-DE-FRANCE                 ;YVELINES                      ;78158;LE CHESNAY                                        ;707;2 487 835;10 429
+ILE-DE-FRANCE                 ;YVELINES                      ;78358;MAISONS-LAFFITTE                                  ;599;2 487 336;9 711
+ILE-DE-FRANCE                 ;YVELINES                      ;78361;MANTES-LA-JOLIE                                   ;90;2 616 238;12 390
+ILE-DE-FRANCE                 ;YVELINES                      ;78423;MONTIGNY-LE-BRETONNEUX                            ;113;1 956 772;5 850
+ILE-DE-FRANCE                 ;YVELINES                      ;78490;PLAISIR                                           ;107;2 366 388;8 459
+ILE-DE-FRANCE                 ;YVELINES                      ;78498;POISSY                                            ;146;2 132 784;8 048
+ILE-DE-FRANCE                 ;YVELINES                      ;78517;RAMBOUILLET                                       ;222;2 463 898;8 791
+ILE-DE-FRANCE                 ;YVELINES                      ;78551;SAINT-GERMAIN-EN-LAYE                             ;1 188;2 602 348;10 762
+ILE-DE-FRANCE                 ;YVELINES                      ;78586;SARTROUVILLE                                      ;148;2 098 624;6 886
+ILE-DE-FRANCE                 ;YVELINES                      ;78640;VELIZY-VILLACOUBLAY                               ;119;1 984 793;6 391
+ILE-DE-FRANCE                 ;YVELINES                      ;78646;VERSAILLES                                        ;2 587;2 649 421;11 038
+LA REUNION                    ;LA REUNION                    ;97408;LA POSSESSION                                     ;69;2 102 561;6 172
+LA REUNION                    ;LA REUNION                    ;97411;SAINT DENIS                                       ;502;2 416 498;10 230
+LA REUNION                    ;LA REUNION                    ;97415;SAINT PAUL                                        ;268;2 526 495;8 874
+LA REUNION                    ;LA REUNION                    ;97416;SAINT PIERRE                                      ;155;2 415 886;9 494
+LA REUNION                    ;LA REUNION                    ;97418;SAINTE MARIE                                      ;66;2 769 799;9 283
+LA REUNION                    ;LA REUNION                    ;97422;TAMPON                                            ;147;2 138 722;7 865
+LANGUEDOC-ROUSSILLON          ;AUDE                          ;11069;CARCASSONNE                                       ;138;2 281 341;8 623
+LANGUEDOC-ROUSSILLON          ;AUDE                          ;11262;NARBONNE                                          ;164;2 374 037;8 775
+LANGUEDOC-ROUSSILLON          ;GARD                          ;30007;ALES                                              ;120;2 131 525;7 149
+LANGUEDOC-ROUSSILLON          ;GARD                          ;30189;NIMES                                             ;681;2 378 146;9 304
+LANGUEDOC-ROUSSILLON          ;HERAULT                       ;34003;AGDE                                              ;165;2 212 168;8 762
+LANGUEDOC-ROUSSILLON          ;HERAULT                       ;34032;BEZIERS                                           ;278;2 605 697;11 396
+LANGUEDOC-ROUSSILLON          ;HERAULT                       ;34145;LUNEL                                             ;58;2 278 803;8 267
+LANGUEDOC-ROUSSILLON          ;HERAULT                       ;34172;MONTPELLIER                                       ;1 068;2 438 675;9 662
+LANGUEDOC-ROUSSILLON          ;HERAULT                       ;34301;SETE                                              ;223;2 481 086;8 632
+LANGUEDOC-ROUSSILLON          ;PYRENEES-ORIENTALES           ;66136;PERPIGNAN                                         ;442;2 472 203;10 059
+LIMOUSIN                      ;CORREZE                       ;19031;BRIVE                                             ;219;2 567 761;10 581
+LIMOUSIN                      ;HAUTE-VIENNE                  ;87085;LIMOGES                                           ;482;3 012 941;13 043
+LORRAINE                      ;MEURTHE-ET-MOSELLE            ;54395;NANCY                                             ;631;2 639 155;11 833
+LORRAINE                      ;MEURTHE-ET-MOSELLE            ;54547;VANDOEUVRE LES NANCY                              ;67;2 317 889;9 143
+LORRAINE                      ;MOSELLE                       ;57463;METZ                                              ;405;2 656 106;10 692
+LORRAINE                      ;MOSELLE                       ;57480;MONTIGNY LES METZ                                 ;109;2 507 529;10 403
+LORRAINE                      ;MOSELLE                       ;57631;SARREGUEMINES                                     ;75;2 628 464;9 745
+LORRAINE                      ;MOSELLE                       ;57672;THIONVILLE                                        ;215;2 486 648;10 362
+LORRAINE                      ;VOSGES                        ;88160;EPINAL                                            ;108;2 922 839;14 186
+LORRAINE                      ;VOSGES                        ;88413;SAINT DIE DES VOSGES                              ;52;2 524 964;10 097
+MARTINIQUE                    ;MARTINIQUE                    ;97209;FORT DE FRANCE                                    ;91;2 899 445;12 490
+MARTINIQUE                    ;MARTINIQUE                    ;97229;SCHOELCHER                                        ;53;2 748 380;12 518
+MIDI-PYRENEES                 ;AVEYRON                       ;12145;MILLAU                                            ;67;2 498 838;9 498
+MIDI-PYRENEES                 ;AVEYRON                       ;12202;RODEZ                                             ;137;2 418 216;10 217
+MIDI-PYRENEES                 ;GERS                          ;32013;AUCH                                              ;82;2 203 300;6 548
+MIDI-PYRENEES                 ;HAUTE-GARONNE                 ;31069;BLAGNAC                                           ;84;2 369 925;9 099
+MIDI-PYRENEES                 ;HAUTE-GARONNE                 ;31149;COLOMIERS                                         ;93;2 064 543;6 057
+MIDI-PYRENEES                 ;HAUTE-GARONNE                 ;31395;MURET                                             ;85;2 338 937;7 468
+MIDI-PYRENEES                 ;HAUTE-GARONNE                 ;31555;TOULOUSE                                          ;2 569;2 456 392;9 475
+MIDI-PYRENEES                 ;HAUTE-GARONNE                 ;31557;TOURNEFEUILLE                                     ;168;2 473 759;8 920
+MIDI-PYRENEES                 ;HAUTES-PYRENEES               ;65440;TARBES                                            ;94;2 207 553;7 840
+MIDI-PYRENEES                 ;LOT                           ;46042;CAHORS                                            ;72;2 100 049;7 467
+MIDI-PYRENEES                 ;TARN                          ;81004;ALBI                                              ;193;2 287 402;8 459
+MIDI-PYRENEES                 ;TARN                          ;81065;CASTRES                                           ;140;2 251 951;7 233
+MIDI-PYRENEES                 ;TARN-ET-GARONNE               ;82121;MONTAUBAN                                         ;229;2 527 056;9 889
+NORD-PAS-DE-CALAIS            ;NORD                          ;59017;ARMENTIERES                                       ;51;2 957 904;15 260
+NORD-PAS-DE-CALAIS            ;NORD                          ;59122;CAMBRAI                                           ;154;2 509 935;8 978
+NORD-PAS-DE-CALAIS            ;NORD                          ;59163;CROIX                                             ;269;3 753 467;15 822
+NORD-PAS-DE-CALAIS            ;NORD                          ;59178;DOUAI                                             ;151;2 437 033;9 503
+NORD-PAS-DE-CALAIS            ;NORD                          ;59183;DUNKERQUE                                         ;243;2 228 134;8 240
+NORD-PAS-DE-CALAIS            ;NORD                          ;59279;HALLUIN                                           ;53;2 342 671;8 553
+NORD-PAS-DE-CALAIS            ;NORD                          ;59295;HAZEBROUCK                                        ;88;2 362 735;9 768
+NORD-PAS-DE-CALAIS            ;NORD                          ;59368;LA MADELEINE                                      ;148;2 795 407;11 359
+NORD-PAS-DE-CALAIS            ;NORD                          ;59328;LAMBERSART                                        ;231;2 872 403;12 424
+NORD-PAS-DE-CALAIS            ;NORD                          ;59350;LILLE                                             ;868;2 619 270;10 860
+NORD-PAS-DE-CALAIS            ;NORD                          ;59378;MARCQ EN BAROEUL                                  ;787;3 018 909;13 508
+NORD-PAS-DE-CALAIS            ;NORD                          ;59512;ROUBAIX                                           ;142;3 019 319;12 934
+NORD-PAS-DE-CALAIS            ;NORD                          ;59599;TOURCOING                                         ;130;2 249 159;8 899
+NORD-PAS-DE-CALAIS            ;NORD                          ;59606;VALENCIENNES                                      ;177;2 230 266;8 433
+NORD-PAS-DE-CALAIS            ;NORD                          ;59009;VILLENEUVE D'ASCQ                                 ;363;2 916 474;13 782
+NORD-PAS-DE-CALAIS            ;NORD                          ;59646;WASQUEHAL                                         ;208;3 352 902;16 474
+NORD-PAS-DE-CALAIS            ;PAS-DE-CALAIS                 ;62041;ARRAS                                             ;180;2 457 698;10 806
+NORD-PAS-DE-CALAIS            ;PAS-DE-CALAIS                 ;62119;BETHUNE                                           ;104;2 245 518;8 113
+NORD-PAS-DE-CALAIS            ;PAS-DE-CALAIS                 ;62160;BOULOGNE SUR MER                                  ;81;2 299 370;8 747
+NORD-PAS-DE-CALAIS            ;PAS-DE-CALAIS                 ;62193;CALAIS                                            ;101;2 392 013;10 119
+NORD-PAS-DE-CALAIS            ;PAS-DE-CALAIS                 ;62498;LENS                                              ;58;2 418 109;9 620
+PAYS DE LA LOIRE              ;LOIRE-ATLANTIQUE              ;44109;NANTES                                            ;2 067;2 621 203;9 975
+PAYS DE LA LOIRE              ;LOIRE-ATLANTIQUE              ;44114;ORVAULT                                           ;179;2 257 713;8 567
+PAYS DE LA LOIRE              ;LOIRE-ATLANTIQUE              ;44143;REZE                                              ;69;2 146 950;6 818
+PAYS DE LA LOIRE              ;LOIRE-ATLANTIQUE              ;44162;ST HERBLAIN                                       ;79;2 586 186;8 893
+PAYS DE LA LOIRE              ;LOIRE-ATLANTIQUE              ;44184;ST NAZAIRE                                        ;174;2 313 495;7 152
+PAYS DE LA LOIRE              ;LOIRE-ATLANTIQUE              ;44190;ST SEBASTIEN SUR LOIRE                            ;88;2 283 183;9 300
+PAYS DE LA LOIRE              ;LOIRE-ATLANTIQUE              ;44215;VERTOU                                            ;159;2 488 650;7 871
+PAYS DE LA LOIRE              ;MAINE-ET-LOIRE                ;49007;ANGERS                                            ;613;2 374 288;8 661
+PAYS DE LA LOIRE              ;MAINE-ET-LOIRE                ;49099;CHOLET                                            ;188;2 385 323;9 018
+PAYS DE LA LOIRE              ;MAINE-ET-LOIRE                ;49328;SAUMUR                                            ;115;2 399 691;8 575
+PAYS DE LA LOIRE              ;MAYENNE                       ;53130;LAVAL                                             ;209;2 695 621;10 947
+PAYS DE LA LOIRE              ;SARTHE                        ;72181;LE MANS                                           ;496;2 555 393;9 487
+PAYS DE LA LOIRE              ;VENDEE                        ;85191;LA ROCHE SUR YON                                  ;171;2 533 999;11 211
+PICARDIE                      ;AISNE                         ;02408;LAON                                              ;67;2 268 186;7 280
+PICARDIE                      ;AISNE                         ;02691;SAINT QUENTIN                                     ;153;2 554 804;10 878
+PICARDIE                      ;AISNE                         ;02722;SOISSONS                                          ;157;2 392 208;9 905
+PICARDIE                      ;OISE                          ;60057;BEAUVAIS                                          ;164;2 645 121;11 138
+PICARDIE                      ;OISE                          ;60159;COMPIEGNE                                         ;297;2 795 927;10 948
+PICARDIE                      ;SOMME                         ;80001;ABBEVILLE                                         ;72;2 381 675;8 023
+PICARDIE                      ;SOMME                         ;80021;AMIENS                                            ;482;2 543 427;9 946
+POITOU-CHARENTES              ;CHARENTE                      ;16015;ANGOULEME                                         ;142;2 442 795;8 903
+POITOU-CHARENTES              ;CHARENTE-MARITIME             ;17300;LA ROCHELLE                                       ;546;2 543 760;10 219
+POITOU-CHARENTES              ;CHARENTE-MARITIME             ;17299;ROCHEFORT                                         ;51;2 153 786;7 455
+POITOU-CHARENTES              ;CHARENTE-MARITIME             ;17415;SAINTES                                           ;100;2 166 173;7 645
+POITOU-CHARENTES              ;DEUX-SEVRES                   ;79191;NIORT                                             ;212;2 913 347;14 175
+POITOU-CHARENTES              ;VIENNE                        ;86066;CHATELLERAULT                                     ;78;2 305 947;8 858
+POITOU-CHARENTES              ;VIENNE                        ;86194;POITIERS                                          ;297;2 562 913;11 132
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-DE-HAUTE-PROVENCE       ;04112;MANOSQUE                                          ;130;2 416 721;12 382
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06004;ANTIBES                                           ;912;2 480 660;9 902
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06027;CAGNES SUR MER                                    ;388;2 192 879;8 460
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06029;CANNES                                            ;1 478;3 051 483;13 695
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06069;GRASSE                                            ;320;2 437 843;10 528
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06030;LE CANNET                                         ;359;2 578 026;11 392
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06079;MANDELIEU LA NAPOULE                              ;344;2 314 276;9 129
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06083;MENTON                                            ;204;2 309 100;9 163
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06900;MONACO                                            ;514;3 866 927;27 165
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06088;NICE                                              ;2 876;2 498 126;10 231
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06123;SAINT LAURENT DU VAR                              ;198;2 291 829;9 445
+PROVENCE-ALPES-COTE D'AZUR    ;ALPES-MARITIMES               ;06155;VALLAURIS                                         ;313;2 407 427;9 082
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13001;AIX EN PROVENCE                                   ;1 809;2 730 096;11 080
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13002;ALLAUCH                                           ;127;2 146 669;7 774
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13004;ARLES                                             ;181;2 438 664;9 800
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13005;AUBAGNE                                           ;219;2 419 238;10 109
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13041;GARDANNE                                          ;51;1 888 129;5 826
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13047;ISTRES                                            ;70;2 486 815;9 647
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13028;LA CIOTAT                                         ;247;2 343 374;8 780
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13054;MARIGNANE                                         ;68;2 201 524;6 537
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13055;MARSEILLE                                         ;3 680;2 618 201;10 602
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13056;MARTIGUES                                         ;96;2 095 871;7 697
+PROVENCE-ALPES-COTE D'AZUR    ;BOUCHES-DU-RHONE              ;13103;SALON DE PROVENCE                                 ;157;2 097 728;7 260
+PROVENCE-ALPES-COTE D'AZUR    ;HAUTES-ALPES                  ;05061;GAP                                               ;208;2 274 955;7 852
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83050;DRAGUIGNAN                                        ;208;2 139 031;8 058
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83061;FREJUS                                            ;349;2 327 787;8 672
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83069;HYERES                                            ;509;2 325 291;8 373
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83062;LA GARDE                                          ;102;2 407 602;9 698
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83126;LA SEYNE SUR MER                                  ;163;1 995 379;6 900
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83144;LA VALETTE                                        ;89;1 986 495;6 569
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83118;SAINT-RAPHAEL                                     ;742;2 418 699;9 464
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83129;SIX-FOURS-LES-PLAGES                              ;241;2 138 676;7 212
+PROVENCE-ALPES-COTE D'AZUR    ;VAR                           ;83137;TOULON                                            ;648;2 318 260;8 932
+PROVENCE-ALPES-COTE D'AZUR    ;VAUCLUSE                      ;84007;AVIGNON                                           ;349;2 485 381;10 394
+PROVENCE-ALPES-COTE D'AZUR    ;VAUCLUSE                      ;84031;CARPENTRAS                                        ;126;2 560 487;10 693
+PROVENCE-ALPES-COTE D'AZUR    ;VAUCLUSE                      ;84035;CAVAILLON                                         ;93;2 245 197;7 511
+PROVENCE-ALPES-COTE D'AZUR    ;VAUCLUSE                      ;84087;ORANGE                                            ;91;2 223 453;7 969
+RHONE-ALPES                   ;AIN                           ;01053;BOURG-EN-BRESSE                                   ;161;2 094 947;7 644
+RHONE-ALPES                   ;AIN                           ;01283;OYONNAX                                           ;91;2 901 576;11 369
+RHONE-ALPES                   ;DROME                         ;26198;MONTELIMAR                                        ;152;2 370 294;8 464
+RHONE-ALPES                   ;DROME                         ;26281;ROMANS                                            ;97;2 255 022;7 051
+RHONE-ALPES                   ;DROME                         ;26362;VALENCE                                           ;242;2 666 553;11 186
+RHONE-ALPES                   ;HAUTE-SAVOIE                  ;74010;ANNECY                                            ;489;2 281 309;8 330
+RHONE-ALPES                   ;HAUTE-SAVOIE                  ;74011;ANNECY-LE-VIEUX                                   ;405;2 412 404;9 351
+RHONE-ALPES                   ;HAUTE-SAVOIE                  ;74012;ANNEMASSE                                         ;107;2 183 547;7 153
+RHONE-ALPES                   ;HAUTE-SAVOIE                  ;74281;THONON-LES-BAINS                                  ;204;2 453 455;10 095
+RHONE-ALPES                   ;ISERE                         ;38053;BOURGOIN JALLIEU                                  ;79;2 502 443;10 201
+RHONE-ALPES                   ;ISERE                         ;38185;GRENOBLE                                          ;676;2 474 147;9 368
+RHONE-ALPES                   ;ISERE                         ;38544;VIENNE                                            ;132;2 251 378;8 261
+RHONE-ALPES                   ;ISERE                         ;38563;VOIRON                                            ;79;2 720 398;11 374
+RHONE-ALPES                   ;LOIRE                         ;42187;ROANNE                                            ;102;2 519 219;10 302
+RHONE-ALPES                   ;LOIRE                         ;42207;SAINT CHAMOND                                     ;76;2 462 937;8 863
+RHONE-ALPES                   ;LOIRE                         ;42218;SAINT ETIENNE                                     ;475;2 521 369;10 588
+RHONE-ALPES                   ;RHONE                         ;69029;BRON                                              ;156;2 376 541;9 170
+RHONE-ALPES                   ;RHONE                         ;69034;CALUIRE ET CUIRE                                  ;525;2 629 752;9 744
+RHONE-ALPES                   ;RHONE                         ;69123;LYON                                              ;4 267;2 692 511;11 113
+RHONE-ALPES                   ;RHONE                         ;69282;MEYZIEU                                           ;96;2 556 320;10 418
+RHONE-ALPES                   ;RHONE                         ;69149;OULLINS                                           ;63;2 107 693;7 157
+RHONE-ALPES                   ;RHONE                         ;69286;RILLIEUX LA PAPE                                  ;100;2 538 685;9 658
+RHONE-ALPES                   ;RHONE                         ;69204;SAINT-GENIS-LAVAL                                 ;157;2 329 568;8 667
+RHONE-ALPES                   ;RHONE                         ;69290;SAINT-PRIEST                                      ;68;2 885 056;10 966
+RHONE-ALPES                   ;RHONE                         ;69202;STE FOY LES LYON                                  ;379;2 756 651;12 089
+RHONE-ALPES                   ;RHONE                         ;69244;TASSIN-LA-DEMI-LUNE                               ;230;2 616 050;9 766
+RHONE-ALPES                   ;RHONE                         ;69264;VILLEFRANCHE-SUR-SAONE                            ;101;2 337 667;8 938
+RHONE-ALPES                   ;RHONE                         ;69266;VILLEURBANNE                                      ;248;2 136 758;6 668
+RHONE-ALPES                   ;SAVOIE                        ;73008;AIX LES BAINS                                     ;207;2 104 177;7 054
+RHONE-ALPES                   ;SAVOIE                        ;73065;CHAMBERY                                          ;322;2 559 715;10 686
