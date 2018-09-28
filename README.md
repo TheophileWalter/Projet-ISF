@@ -17,6 +17,6 @@ option : `$ git config credential.helper store`
 4. `$ git push`
 
 ## TODO List:
-[ ] script nettoyage de CSV
-[ ] script transformer CSV en JSON
-[ ] script transformer la base des locatisations des villes en JSON
+- [ ] script nettoyage de CSV
+- [ ] script transformer CSV en JSON
+- [ ] script transformer la base des locatisations des villes en JSON
