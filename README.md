@@ -17,7 +17,7 @@ option : `$ git config credential.helper store`
 4. `$ git push`
 
 ## Execute scripts
-- convertCsvToJson.js : `node convertCsvToJson.js`
+- convertCsvToJson.js : `$ node convertCsvToJson.js`
 
 ## TODO List:
 - [ ] script nettoyage de CSV
