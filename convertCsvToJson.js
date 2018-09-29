@@ -1,5 +1,5 @@
 // FUNCTION : convert CSV into JSON
-function convertCsvJson(csvLines) {
+function convertCsvJson(filename, csvLines) {
 	console.log("    START [convertCsvJson()]");
 	// get headers from CSV lines
 	var csvHeaders = csvLines[0].split(";");
@@ -22,11 +22,16 @@ function convertCsvJson(csvLines) {
 	// return json 
 	//console.log(finalResult);
 	console.log("    END [convertCsvJson()]");
-	return JSON.stringify(finalResult);
+
+	var data = JSON.stringify(finalResult);
+	var fs = require('fs');
+	fs.writeFile("data_json/"+filename + ".json", data);	
+	
+	return data;
 }
 
 // FUNCTION : open CSV file
-function openFile(csvPathFile) {
+function openFile(filename, csvPathFile) {
 	console.log("  START [openFile()]");
 	// read CSV file
 	var fs = require('fs');
@@ -42,7 +47,7 @@ function openFile(csvPathFile) {
 	var csvLines = csvFile.split("\n");
 	
 	//console.log("csvLines : " + csvLines[0]);
-	convertCsvJson(csvLines);
+	convertCsvJson(filename, csvLines);
 	console.log("  END [openFile()]");
 }
 
@@ -56,7 +61,7 @@ function getCsvFiles() {
 	
 	files.forEach(function(filename) {
 		if (filename.split('.').pop() == "csv") {
-			openFile(path+filename);
+			openFile(filename.split('.')[0], path+filename);
 		}
 	});
 	console.log("END [getCsvFiles()]");
