@@ -1,22 +1,27 @@
 // FUNCTION : convert CSV into JSON
-function convertCsvJson(filename, csvLines) {
+function convertCsvJson(filename, csvLines) {	
 	// get headers from CSV lines
 	var csvHeaders = ["Régions", "Départements", "Code commune", "Commune", "Nombre de redevables", "Patrimoine moyen en €", "Impôt moyen en €"];
 	// final json object
 	var finalResult = [];	
 	// for each CSV line
 	for (var i = 1; i < csvLines.length; i++) {
-		// split CSV lines into values
-		var csvValues = csvLines[i].split(";");
-		// init json object
-		var jsonObj = {};
-		// for each CSV header
-		for (var j = 0; j < csvHeaders.length; j++) {
-			// build json object
-			jsonObj[csvHeaders[j]] = csvValues[j];
+		// ignore wrong and empty lines
+		if (csvLines[i].includes("Aucune ville de plus de") || csvLines[i] == "") {
+			continue;
+		} else {
+			// split CSV lines into values
+			var csvValues = csvLines[i].split(";");
+			// init json object
+			var jsonObj = {};
+			// for each CSV header
+			for (var j = 0; j < csvHeaders.length; j++) {
+				// build json object
+				jsonObj[csvHeaders[j]] = csvValues[j];
+			}
+			// push json object into final json
+			finalResult.push(jsonObj);
 		}
-		// push json object into final json
-		finalResult.push(jsonObj);
 	}
 	// build json
 	var jsonData = {};
