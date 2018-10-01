@@ -1,7 +1,5 @@
 // FUNCTION : convert CSV into JSON
 function convertCsvJson(filename, csvLines) {
-	console.log("    START [convertCsvJson()]");
-	console.log(csvLines.length);
 	// get headers from CSV lines
 	var csvHeaders = ["Régions", "Départements", "Code commune", "Commune", "Nombre de redevables", "Patrimoine moyen en €", "Impôt moyen en €"];
 	// final json object
@@ -20,9 +18,6 @@ function convertCsvJson(filename, csvLines) {
 		// push json object into final json
 		finalResult.push(jsonObj);
 	}
-	// return json 
-	console.log("    END [convertCsvJson()]");
-
 	// build json
 	var jsonData = {};
 	jsonData["Année"] = filename;
@@ -30,14 +25,13 @@ function convertCsvJson(filename, csvLines) {
 	var data = JSON.stringify(jsonData);
 	
 	var fs = require('fs');
-	fs.writeFile("../data_json/"+filename + ".json", data);	
-	
+	fs.writeFile("../data_json/"+filename + ".json", data, (error) => {});	
+		
 	return data;
 }
 
 // FUNCTION : open CSV file
 function openFile(filename, csvPathFile) {
-	console.log("  START [openFile()]");
 	// read CSV file
 	var fs = require('fs');
 	// split CSV file into lines 
@@ -45,25 +39,27 @@ function openFile(filename, csvPathFile) {
 	// remove 3th INSEE number 
 	csvFile = csvFile.replace(/(;\d\d)\d(\d\d\d;)/g, '$1$2');
 	// remove blanks
-	csvFile = csvFile.replace(/(^(\s)*|(\s)*$)/g, '');
+	csvFile = csvFile.replace(/^\s+/g, '');
+	// remove blanks
+	csvFile = csvFile.replace(/\s+$/g, '\n');
 	// remove blanks near ";"
-	csvFile = csvFile.replace(/(\s)*;(\s)*/g, ';');
+	csvFile = csvFile.replace(/\s+;/g, ';');
+	// remove blanks near ";"
+	csvFile = csvFile.replace(/;\s+/g, '\n');
+	// // remove ";$"
+	csvFile = csvFile.replace(/;$/g, '\n');
 	// remove ";;;;;;;"
-	csvFile = csvFile.replace(/;+$/g, '');
+	csvFile = csvFile.replace(/;+/g, ';');
 	// remove space in numbers
 	csvFile = csvFile.replace(/(\d)\s(\d)/g, '$1$2');
 	
 	var csvLines = csvFile.split("\n");
-	console.log(csvLines);
 	
-	//console.log("csvLines : " + csvLines[0]);
 	convertCsvJson(filename, csvLines);
-	console.log("  END [openFile()]");
 }
 
 // FUNCTION : list all csv files in folder
 function getCsvFiles() {
-	console.log("START [getCsvFiles()]");
 	
 	let path = '../data/';
 	var fs = require('fs');
@@ -74,9 +70,8 @@ function getCsvFiles() {
 			openFile(filename.split('.')[0], path+filename);
 		}
 	});
-	console.log("END [getCsvFiles()]");
 }
 
 // launch script
-//getCsvFiles();
-openFile("2008", "../data/2008.csv");
+getCsvFiles();
+console.log("[OK] convertCsvToJson.js");
