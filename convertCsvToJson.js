@@ -45,6 +45,8 @@ function openFile(filename, csvPathFile) {
 	csvFile = csvFile.replace(/;;;;;;;/g, '');
 	// remove space in numbers
 	csvFile = csvFile.replace(/(\d)\s(\d)/g, '$1$2');
+	// remove 3th INSEE number 
+	csvFile = csvFile.replace(/(\d)(\d)\d(\d)(\d)(\d)/g, '$1$2$3$4$5');
 	
 	var csvLines = csvFile.split("\n");
 	
