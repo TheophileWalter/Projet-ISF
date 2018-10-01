@@ -38,9 +38,9 @@ function openFile(filename, csvPathFile) {
 	// split CSV file into lines 
 	var csvFile = fs.readFileSync(csvPathFile).toString();
 	// remove blanks
-	csvFile = csvFile.replace(/(^\s|\s$)/g, '');
+	csvFile = csvFile.replace(/(^(\s)*|(\s)*$)/g, '');
 	// remove blanks near ";"
-	csvFile = csvFile.replace(/(\s)?;(\s)?/g, ';');
+	csvFile = csvFile.replace(/(\s)*;(\s)*/g, ';');
 	// remove ";;;;;;;"
 	csvFile = csvFile.replace(/;;;;;;;/g, '');
 	
