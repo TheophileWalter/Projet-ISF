@@ -1,10 +1,11 @@
 // FUNCTION : convert CSV into JSON
 function convertCsvJson(filename, csvLines) {
 	console.log("    START [convertCsvJson()]");
+	console.log(csvLines.length);
 	// get headers from CSV lines
 	var csvHeaders = ["Régions", "Départements", "Code commune", "Commune", "Nombre de redevables", "Patrimoine moyen en €", "Impôt moyen en €"];
 	// final json object
-	var finalResult = [];
+	var finalResult = [];	
 	// for each CSV line
 	for (var i = 1; i < csvLines.length; i++) {
 		// split CSV lines into values
@@ -29,7 +30,7 @@ function convertCsvJson(filename, csvLines) {
 	var data = JSON.stringify(jsonData);
 	
 	var fs = require('fs');
-	fs.writeFile("data_json/"+filename + ".json", data);	
+	fs.writeFile("../data_json/"+filename + ".json", data);	
 	
 	return data;
 }
@@ -48,11 +49,12 @@ function openFile(filename, csvPathFile) {
 	// remove blanks near ";"
 	csvFile = csvFile.replace(/(\s)*;(\s)*/g, ';');
 	// remove ";;;;;;;"
-	csvFile = csvFile.replace(/;;;;;;;/g, '');
+	csvFile = csvFile.replace(/;+$/g, '');
 	// remove space in numbers
 	csvFile = csvFile.replace(/(\d)\s(\d)/g, '$1$2');
 	
 	var csvLines = csvFile.split("\n");
+	console.log(csvLines);
 	
 	//console.log("csvLines : " + csvLines[0]);
 	convertCsvJson(filename, csvLines);
@@ -63,7 +65,7 @@ function openFile(filename, csvPathFile) {
 function getCsvFiles() {
 	console.log("START [getCsvFiles()]");
 	
-	let path = 'data/';
+	let path = '../data/';
 	var fs = require('fs');
 	var files = fs.readdirSync(path);
 	
@@ -76,4 +78,5 @@ function getCsvFiles() {
 }
 
 // launch script
-getCsvFiles();
+//getCsvFiles();
+openFile("2008", "../data/2008.csv");
