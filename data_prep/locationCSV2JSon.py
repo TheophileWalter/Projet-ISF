@@ -1,8 +1,8 @@
 # coding=utf-8
 import csv
 
-path = 'data/loc/laposte_hexasmal.csv'
-out = open('data_json/location.json', 'w')
+path = '../data/loc/laposte_hexasmal.csv'
+out = open('../data_json/location.json', 'w')
 out.write('{')
 
 reader = csv.reader(open(path, newline=''), delimiter=';')
