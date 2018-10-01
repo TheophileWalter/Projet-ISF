@@ -2,7 +2,7 @@
 function convertCsvJson(filename, csvLines) {
 	console.log("    START [convertCsvJson()]");
 	// get headers from CSV lines
-	var csvHeaders = csvLines[0].split(";");
+	var csvHeaders = ["Régions", "Départements", "Code commune", "Commune", "Nombre de redevables", "Patrimoine moyen en €", "Impôt moyen en €"];
 	// final json object
 	var finalResult = [];
 	// for each CSV line
@@ -43,6 +43,8 @@ function openFile(filename, csvPathFile) {
 	csvFile = csvFile.replace(/(\s)*;(\s)*/g, ';');
 	// remove ";;;;;;;"
 	csvFile = csvFile.replace(/;;;;;;;/g, '');
+	// remove space in numbers
+	csvFile = csvFile.replace(/(\d)\s(\d)/g, '$1$2');
 	
 	var csvLines = csvFile.split("\n");
 	
@@ -67,4 +69,5 @@ function getCsvFiles() {
 	console.log("END [getCsvFiles()]");
 }
 
+// launch script
 getCsvFiles();
