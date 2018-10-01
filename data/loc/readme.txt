@@ -1,0 +1,1 @@
+Contient la correspondance entre un code postal et la localistion d'une ville.
