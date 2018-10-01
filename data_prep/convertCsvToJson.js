@@ -51,12 +51,14 @@ function openFile(filename, csvPathFile) {
 	csvFile = csvFile.replace(/\s+;/g, ';');
 	// remove blanks near ";"
 	csvFile = csvFile.replace(/;\s+/g, '\n');
-	// // remove ";$"
+	// remove ";$"
 	csvFile = csvFile.replace(/;$/g, '\n');
 	// remove ";;;;;;;"
 	csvFile = csvFile.replace(/;+/g, ';');
 	// remove space in numbers
 	csvFile = csvFile.replace(/(\d)\s(\d)/g, '$1$2');
+	// remove "\r"
+	csvFile = csvFile.replace(/\r/g, '');
 	
 	var csvLines = csvFile.split("\n");
 	
