@@ -20,10 +20,14 @@ function convertCsvJson(filename, csvLines) {
 		finalResult.push(jsonObj);
 	}
 	// return json 
-	//console.log(finalResult);
 	console.log("    END [convertCsvJson()]");
 
-	var data = JSON.stringify(finalResult);
+	// build json
+	var jsonData = {};
+	jsonData["Année"] = filename;
+	jsonData["Data"] = finalResult;
+	var data = JSON.stringify(jsonData);
+	
 	var fs = require('fs');
 	fs.writeFile("data_json/"+filename + ".json", data);	
 	
