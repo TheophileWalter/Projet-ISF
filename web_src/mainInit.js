@@ -18,7 +18,7 @@ function mainInit() {
         }
 
         // Creates the map
-        var graph = new ResizableGraph(500, 250, document.body, Map);
+        var graph = new ResizableGraph(596, 584, document.body, Map);
         graph.draw(preparedLocations);
 
     });
