@@ -24,6 +24,7 @@ years.forEach(element => {
         // Check if the last file has been loaded
         if (years.length == 0) {
             // Call the initialization function
+            console.log("All files loaded.");
             mainInit();
         }
     });
