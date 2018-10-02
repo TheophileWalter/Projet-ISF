@@ -48,11 +48,9 @@ function openFile(filename, csvPathFile) {
 	// remove blanks
 	csvFile = csvFile.replace(/\s+$/g, '\n');
 	// remove blanks near ";"
-	csvFile = csvFile.replace(/\s+;/g, ';');
-	// remove blanks near ";"
-	csvFile = csvFile.replace(/;\s+/g, '\n');
+	csvFile = csvFile.replace(/\s*;\s*/g, ';');
 	// remove ";$"
-	csvFile = csvFile.replace(/;$/g, '\n');
+	csvFile = csvFile.replace(/;+$/g, '\n');
 	// remove ";;;;;;;"
 	csvFile = csvFile.replace(/;+/g, ';');
 	// remove space in numbers
@@ -67,7 +65,6 @@ function openFile(filename, csvPathFile) {
 
 // FUNCTION : list all csv files in folder
 function getCsvFiles() {
-	
 	let path = '../data/';
 	var fs = require('fs');
 	var files = fs.readdirSync(path);
