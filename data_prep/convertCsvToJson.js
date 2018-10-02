@@ -48,7 +48,7 @@ function openFile(filename, csvPathFile) {
 	// remove blanks
 	csvFile = csvFile.replace(/\s+$/g, '\n');
 	// remove blanks near ";"
-	csvFile = csvFile.replace(/\s*;\s*/g, ';');
+	csvFile = csvFile.replace(/\s*;/g, ';');
 	// remove ";$"
 	csvFile = csvFile.replace(/;+$/g, '\n');
 	// remove ";;;;;;;"
