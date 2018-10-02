@@ -22,6 +22,12 @@ class Map extends Graph {
         }
         this.background.src = "web_src/franceHigh.svg";
 
+        // Configurations
+        this.leftLongitude = -4.796120;
+        this.topLatitude = 51.089515;
+        this.rightLongitude = 9.560553;
+        this.bottomLatitude = 41.363289;
+
     }
 
     /*
@@ -81,20 +87,30 @@ class Map extends Graph {
      *   color: La couleur au format CSS
      */
     _drawCoordinates(x, y, size, color) {
-        
-        // calcul and change x to opposite value
-        var resN = -x * (this.height / 180) + this.centerN;
-        var resE = y * (this.width / 360) + this.centerE;
 
-        // check if values are 0
-        var resY = (x == 0 ? this.centerN : resN);
-        var resX = (y == 0 ? this.centerE : resE);
-        
-        this.context.fillStyle = color;
+        // Vérifie si le point est en France métropolitaine
+        if (y >= this.leftLongitude && y <= this.rightLongitude && x <= this.topLatitude && x >= this.bottomLatitude) {
 
-        this.context.beginPath();
-        this.context.arc(resX, resY, size, 0, 2*Math.PI);
-        this.context.fill();
+            // Décale les points
+            y = (y*(this.rightLongitude-this.leftLongitude)) - this.leftLongitude;
+            x = (x*(this.bottomLatitude-this.topLatitude)) - this.topLatitude;
+        
+            // calcul and change x to opposite value
+            var resN = -x * (this.height / 180) + this.centerN;
+            var resE = y * (this.width / 360) + this.centerE;
+
+            // check if values are 0
+            var resY = (x == 0 ? this.centerN : resN);
+            var resX = (y == 0 ? this.centerE : resE);
+            
+            this.context.fillStyle = color;
+
+            this.context.beginPath();
+            this.context.arc(resX, resY, size, 0, 2*Math.PI);
+            this.context.fill();
+
+        }
+
     }
 
  }
