@@ -20,7 +20,7 @@ class Map extends Graph {
         this.background.onload = function() {
             this.backgroundLoaded = true;
         }
-        this.background.src = "web_src/worldmap.svg";
+        this.background.src = "web_src/franceDep.svg";
 
     }
 

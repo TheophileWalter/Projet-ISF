@@ -11,7 +11,7 @@ body {
     resize: both;
     overflow: hidden;
     /* Icône de redimensionnement */
-    background-image: url("images/resize.svg");
+    background-image: url("resize.svg");
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: 15px 15px;
