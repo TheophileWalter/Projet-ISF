@@ -1,26 +1,76 @@
 body {
     font-family: sans-serif;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding-top: 50px;
 }
 
-/* Pour des canvas redimensionnables */
-.resizeBox {
-    /*display: inline-block;*/
-    /* Padding pour Google Chrome, l'élement n'est pas redimensionnable sans */
-    padding-right: 15px;
-    padding-bottom: 15px;
-    resize: both;
-    overflow: hidden;
-    /* Icône de redimensionnement */
-    background-image: url("resize.svg");
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: 15px 15px;
-    /* Limite la taille à 100%, le parent doit donc avoir une taille fixe ! */
-    max-width: 100%;
-}
-
-.resizeBox > canvas {
-    width: 100%;
-    height: 100%;
+#navbar {
+    color: #ecf0f1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: #16a085;
     margin: 0;
+    padding: 0;
+}
+
+#navbar table {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 48px; /* Minus 2 pixels to correct the 1px border */
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    padding-left: 30px!important;
+}
+
+#navbar-options {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: right;
+}
+
+input[type="button"] {
+    color: #2c3e50;
+    border: 1px solid #34495e;
+    border-radius: 5px;
+    background-color: #12b897;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#navbar-options input[type="button"] {
+    font-size: 17px;
+}
+
+.visualization {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    width: 750px;
+    border: 1px solid #bdc3c7;
+    border-radius: 20px;
+    background-color: #bdc3c7;
+}
+
+.visualization > .title {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #2c3e50;
 }
