@@ -70,6 +70,10 @@ class Map extends Graph {
         this.centerN = (this.height / 2);
         this.centerE = (this.width / 2);
 
+		//this.centerN = this.height * (this.topLatitude / bottomLatitude);
+		//this.centerE = this.width * (this.leftLongitude / rightLongitude);
+		console.log("centerN : "+this.centerN+" / centerE : "+this.centerE);
+		
         // Draw dots with coordinates
         for (var i = 0; i < data.length; i++) {
             this._drawCoordinates(data[i][0], data[i][1], data[i][2], data[i][3]);
@@ -91,10 +95,6 @@ class Map extends Graph {
         // Vérifie si le point est en France métropolitaine
         if (y >= this.leftLongitude && y <= this.rightLongitude && x <= this.topLatitude && x >= this.bottomLatitude) {
 
-            // Décale les points
-            y = (y*(this.rightLongitude-this.leftLongitude)) - this.leftLongitude;
-            x = (x*(this.bottomLatitude-this.topLatitude)) - this.topLatitude;
-        
             // calcul and change x to opposite value
             var resN = -x * (this.height / 180) + this.centerN;
             var resE = y * (this.width / 360) + this.centerE;
