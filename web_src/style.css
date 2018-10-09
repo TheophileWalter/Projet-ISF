@@ -92,3 +92,7 @@ input[type="button"] {
 .visualization .content {
     font-size: 17px;
 }
+
+.mapboxgl-canvas-container {
+    height: 40vw!important;
+}
