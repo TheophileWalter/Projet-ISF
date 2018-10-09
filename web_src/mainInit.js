@@ -1,3 +1,5 @@
+let fullLocations = [];
+
 function mainInit() {
     // Check the links between towns and geolocations
     // Iteration on years
@@ -13,12 +15,12 @@ function mainInit() {
                 console.log('Error on ' + code + ' year ' + key);
                 console.log(data[key][i]);
             } else {
-                preparedLocations.push([loc['lat'], loc['lon'], data[key][i]['Impôt moyen en €']/1000, '#AA0000']);
+                preparedLocations.push([loc['lat'], loc['lon'], data[key][i]['Impôt moyen en €'], data[key][i]['Commune']]);
             }
         }
 
         // Creates the map
-        console.log(preparedLocations);
+        fullLocations = preparedLocations;
 
     });
 }

@@ -22,8 +22,22 @@ function locationFinder(code, name) {
         return locations['2A004'];
     }
     if (name == 'bastia') {
-        // Proble due to special postal code
+        // Problem due to special postal code
         return locations['2B033'];
+    }
+    if (name == "le gosier") {
+        // Problem due to special postal code
+        return locations['97113'];
+    }
+    if (name == "schoelcher") {
+        // Problem due to special postal code
+        return locations['97229'];
+    }
+    if (name == "fort de france") {
+        return locations['97209'];
+    }
+    if (name == "la possession") {
+        return locations['97408'];
     }
     return undefined;
 }
