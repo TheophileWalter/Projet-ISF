@@ -9,37 +9,12 @@ function locationFinder(code, name) {
         // Not in France, but even in the list
         return {'lat': 43.731377, 'lon': 7.419787};
     }
-    if (name == 'lyon') {
-        // Problem due to borough
-        return locations['69381'];
-    }
-    if (name == 'marseille') {
-        // Problem due to borough
-        return locations['13201'];
-    }
-    if (name == 'ajaccio') {
-        // Problem due to special postal code
-        return locations['2A004'];
-    }
-    if (name == 'bastia') {
-        // Problem due to special postal code
-        return locations['2B033'];
-    }
-    if (name == "le gosier") {
-        // Problem due to special postal code
-        return locations['97113'];
-    }
-    if (name == "schoelcher") {
-        // Problem due to special postal code
-        return locations['97229'];
-    }
-    if (name == "fort de france") {
-        return locations['97209'];
-    }
-    if (name == "la possession") {
-        return locations['97408'];
-    }
-    return undefined;
+    // Problem due to borough and special codes
+    var specials = {'lyon': '69381', 'marseille': '13201', 'ajaccio': '2A004',
+        'bastia': '2B033', "le gosier": '97113', "schoelcher": '97229', "fort de france": '97209',
+        "la possession": '97408', 'saint andre': '97409', 'saint denis': '97411', 'saint paul': '97415',
+        'saint pierre': '97416', 'sainte marie': '97418', 'tampon': '97422'};
+    return specials[name];
 }
 
 // Escape the HTML special chars
