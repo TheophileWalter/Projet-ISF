@@ -6,7 +6,7 @@ function addVisualization(title, content) {
         "And the lamp-light o’er him streaming throws his shadow on the floor;<br />" +
         "And my soul from out that shadow that lies floating on the floor<br />" +
         "Shall be lifted—nevermore!");
-    addMap("Carte de France", null);
+    addMap("Carte de France", fullLocations);
 }
 
 // Add a map to the page
@@ -36,7 +36,12 @@ function addMap(title, geoData) {
                 .addTo(map);		
     }
 
-    setCoords(2.5, 46.5, "Texte");
+    // loop data
+    function loopOnData(geoData) {
+        setCoords(2.5, 46.5, "Texte");
+    }
+
+    loopOnData(geoData);
 
 }
 
