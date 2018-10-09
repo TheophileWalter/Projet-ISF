@@ -14,7 +14,7 @@ function locationFinder(code, name) {
         'bastia': '2B033', "le gosier": '97113', "schoelcher": '97229', "fort de france": '97209',
         "la possession": '97408', 'saint andre': '97409', 'saint denis': '97411', 'saint paul': '97415',
         'saint pierre': '97416', 'sainte marie': '97418', 'tampon': '97422'};
-    return specials[name];
+    return locations[specials[name]];
 }
 
 // Escape the HTML special chars
