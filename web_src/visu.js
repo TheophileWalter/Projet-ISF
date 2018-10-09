@@ -20,7 +20,7 @@ function addMap(title, geoData) {
     var map = new mapboxgl.Map({
         container: v.content,
         style: 'mapbox://styles/mapbox/streets-v10',
-        zoom: 5.4,
+        zoom: 4,
         center: [2.5, 46.5]
     });
 
