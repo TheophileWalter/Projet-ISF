@@ -5,7 +5,7 @@
     <title>Points on a map</title>
 	<script src='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-	<div id='map' style='width: 100vw; height: 100vh;'></div>
+	<div id='map' src='web_src' style='width: 100vw; height: 100vh;'></div>
 	
 	<style>
         body { margin:0; padding:0; }
@@ -22,18 +22,22 @@
 			center: [2.5, 46.5]
 		});
 		
-		// create the popup
-		var pointPopup = new mapboxgl.Popup({ offset: 25 }).setText('Données à mettre !');
-		
 		// Add navigation controls
 		map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
-		var pointCoord = [2.5, 46.5];
-		marker = new mapboxgl.Marker()
-				.setLngLat(pointCoord)
-				.setPopup(pointPopup)
-				.addTo(map);		
-				
+		// Draw coordinates
+		function setCoords(x, y, text) {
+			var pointCoord = [x, y];
+			marker = new mapboxgl.Marker()
+					.setLngLat(pointCoord)
+					.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(text))
+					.addTo(map);		
+		}
+		
+		setCoords(2.5, 46.5, "Texte");
+		
+		
+		
 	</script>
   </body>
 </html>
