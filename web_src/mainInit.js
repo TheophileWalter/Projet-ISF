@@ -11,7 +11,7 @@ function mainInit() {
             var code = data[key][i]['Code commune'];
             var name = data[key][i]['Commune'];
             var loc = locationFinder(code, name);
-            if (loc === undefined) {
+            if (loc === undefined || isNaN(loc['lat']) || isNaN(loc['lon'])) {
                 console.log('Error on ' + code + ' year ' + key);
                 console.log(data[key][i]);
             } else {
