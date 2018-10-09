@@ -32,17 +32,14 @@ function addMap(title, geoData) {
         var pointCoord = [x, y];
         marker = new mapboxgl.Marker()
                 .setLngLat(pointCoord)
-                .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(text))
+                .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(text))
                 .addTo(map);		
     }
 
     // loop data
-    function loopOnData(geoData) {
-        setCoords(2.5, 46.5, "Texte");
-    }
-
-    loopOnData(geoData);
-
+    geoData.forEach(elements => {
+        setCoords(elements[1], elements[0], "impôt moyen : "+elements[2]+"€<br />ville : "+elements[3]);
+    });
 }
 
 // Append a visualization to the page
