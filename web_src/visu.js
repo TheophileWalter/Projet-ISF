@@ -78,7 +78,6 @@ function addMap(title, geoData) {
         center: [2.5, 46.5]
     });
 
-
     map.on('load', function () {
 
         map.addLayer({
@@ -89,7 +88,8 @@ function addMap(title, geoData) {
                 "data": {geoData}
             }
         });
-
+    });
+}
     /*
     // French Map with marker
     // Add navigation controls
@@ -108,7 +108,6 @@ function addMap(title, geoData) {
     geoData.forEach(elements => {
         setCoords(elements[1], elements[0], "impôt moyen : "+elements[2]+"€<br />ville : "+elements[3]);
     });*/
-}
 
 // Append a visualization to the page
 function appendToBody(title, content) {
