@@ -15,12 +15,22 @@ function mainInit() {
                 console.log('Error on ' + code + ' year ' + key);
                 console.log(data[key][i]);
             } else {
-                preparedLocations.push([loc['lat'], loc['lon'], data[key][i]['Impôt moyen en €'], data[key][i]['Commune']]);
+                preparedLocations.push({
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [loc['lat'], loc['lon']]
+                    },
+                    "properties": {
+                      "name": data[key][i]['Commune'],
+                      "value": data[key][i]['Impôt moyen en €']
+                    }
+                  });
             }
         }
 
-        // Saves it
-        fullLocations[key] = preparedLocations;
+        // Creates the map
+        fullLocations[key] = {"type": "FeatureCollection", "features": preparedLocations};
 
         // Add button to map selector
         document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:addMap(\'Carte de France - ' + key + '\', fullLocations[\'' + key + '\']);" /><br />';
