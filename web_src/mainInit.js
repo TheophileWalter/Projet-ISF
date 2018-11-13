@@ -25,7 +25,7 @@ function mainInit() {
                       "name": data[key][i]['Commune'],
                       "value": data[key][i]['Impôt moyen en €'],
                       "redevables": data[key][i]['Nombre de redevables'],
-                      "sizec": 6+Math.round(Math.sqrt(data[key][i]['Impôt moyen en €']/30))
+                      "sizec": 6+Math.round(Math.sqrt(data[key][i]['Impôt moyen en €']/10))
                     }
                   });
             }
@@ -35,7 +35,7 @@ function mainInit() {
         fullLocations[key] = {"type": "FeatureCollection", "features": preparedLocations};
 
         // Add button to map selector
-        document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:addMap(\'Carte de France - ' + key + '\', fullLocations[\'' + key + '\']);closeDialog(\'dialog-map-year\');" /><br />';
+        document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:addMap(\'Carte de France - ' + key + '\', fullLocations[\'' + key + '\'], \'heatMap\');closeDialog(\'dialog-map-year\');" /><br />';
 
     });
 }
