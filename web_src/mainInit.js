@@ -19,8 +19,11 @@ function mainInit() {
             }
         }
 
-        // Creates the map
-        fullLocations = preparedLocations;
+        // Saves it
+        fullLocations[key] = preparedLocations;
+
+        // Add button to map selector
+        document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:addMap(\'Carte de France - ' + key + '\', fullLocations[\'' + key + '\']);" /><br />';
 
     });
 }
