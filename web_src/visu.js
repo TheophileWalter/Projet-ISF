@@ -127,7 +127,7 @@ function appendToBody(title, content) {
     var divTitle = document.createElement('div');
     divTitle.className = 'title';
     divTitle.id = id.title;
-    divTitle.innerHTML = escapeHtml(title);
+    divTitle.innerHTML = escapeHtml(title) + '<div class="close-visu" title="Supprimer" onclick="javascript:removeVisualization(\'' + id.visualization + '\');"></div>';
     div.appendChild(divTitle);
     var divContent = document.createElement('div');
     divContent.className = 'content';
@@ -137,4 +137,10 @@ function appendToBody(title, content) {
     document.getElementById('page-content').appendChild(div);
     
     return id;
+}
+
+// Removes a visualization
+function removeVisualization(id) {
+    var element = document.getElementById(id);
+    element.parentNode.removeChild(element);
 }
