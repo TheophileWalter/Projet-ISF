@@ -105,3 +105,12 @@ input[type="button"] {
 #dialog > input[type="button"], #dialog-map-year > input[type="button"] {
     width: 100%;
 }
+
+.close-visu {
+    float: right;
+}
+
+.close-visu::after {
+    content: '\274C';
+    cursor: pointer;
+}
