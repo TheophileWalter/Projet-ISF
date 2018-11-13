@@ -79,6 +79,18 @@ function addMap(title, geoData) {
         center: [2.5, 46.5]
     });
 
+
+    map.on('load', function () {
+
+        map.addLayer({
+            "id": "points",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {geoData}
+            }
+        });
+
     /*
     // French Map with marker
     // Add navigation controls

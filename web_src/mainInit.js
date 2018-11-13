@@ -31,5 +31,6 @@ function mainInit() {
 
         // Creates the map
         fullLocations[key] = {"type": "FeatureCollection", "features": preparedLocations};
+        console.log(JSON.stringify(fullLocations[key]));
     });
 }
