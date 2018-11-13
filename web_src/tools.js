@@ -30,6 +30,6 @@ function escapeHtml(unsafe) {
 // Close a JQuery UI popup
 function closeDialog(id) {
     $(function() {
-        $('#dialog').dialog('close');
+        $('#' + id).dialog('close');
     });
 }
