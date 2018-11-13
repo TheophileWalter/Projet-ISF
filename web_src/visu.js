@@ -1,31 +1,22 @@
-var currentPres = 0;
-
 // Button to add a visualization
-function addVisualization(title, content) {
-    switch(currentPres) {
-        case 1:
-            appendToBody("Hello ceci est ma visualisation", "And the Raven, never flitting, still is sitting, still is sitting<br />" +
-            "On the pallid bust of Pallas just above my chamber door;<br />" +
-            "And his eyes have all the seeming of a demon’s that is dreaming,<br />" +
-            "And the lamp-light o’er him streaming throws his shadow on the floor;<br />" +
-            "And my soul from out that shadow that lies floating on the floor<br />" +
-            "Shall be lifted—nevermore!");
-        break;
-        case 0:
-            addMap("Carte de France", fullLocations);
-        break;
-        case 2:
-            addTestChart();
-        break;
-    }
-    currentPres++;
+function addVisualization() {
+    $(function() {
+        $('#dialog').dialog();
+    });
 }
 
 // Add a test chart
 function addTestChart() {
+
+    // Prepare the histogram
     var chartId = 'chartjs-' + Math.random();
     appendToBody('Chart test', '<canvas id="' + chartId + '" width="400" height="400"></canvas>');
     var ctx = document.getElementById(chartId).getContext('2d');
+
+    // Prepare the data
+
+
+    // Add data to histogram
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -61,6 +52,16 @@ function addTestChart() {
                 }]
             }
         }
+    });
+}
+
+// Select a year for the map
+function selectMapYear() {
+    $(function() {
+        $('#dialog').dialog('close');
+    });
+    $(function() {
+        $('#dialog-map-year').dialog();
     });
 }
 

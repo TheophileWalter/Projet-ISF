@@ -31,6 +31,9 @@ function mainInit() {
 
         // Creates the map
         fullLocations[key] = {"type": "FeatureCollection", "features": preparedLocations};
-        console.log(JSON.stringify(fullLocations[key]));
+        console.log(fullLocations[key]);
+
+        // Add button to map selector
+        document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:addMap(\'Carte de France - ' + key + '\', fullLocations[\'' + key + '\']);" /><br />';
     });
 }

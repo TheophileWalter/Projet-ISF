@@ -4,15 +4,19 @@
     <meta charset="utf-8" />
     <title>Impôt de solidarité sur la fortune &ndash; Visualisation des données</title>
     <link rel="stylesheet" href="web_src/style.css" />
+    <link rel="stylesheet" href="web_src/jquery/jquery-ui.min.css" />
+    <link rel="stylesheet" href="web_src/jquery/jquery-ui.structure.min.css" />
+    <link rel="stylesheet" href="web_src/jquery/jquery-ui.theme.min.css" />
 	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css" />
-    <script type="text/javascript" src="web_src/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="web_src/Chart.min.js"></script>
-    <script type="text/javascript" src="web_src/Chart.bundle.min.js"></script>
-    <script type="text/javascript" src="web_src/tools.js"></script>
-    <script type="text/javascript" src="web_src/mainInit.js"></script>
-    <script type="text/javascript" src="web_src/load.js"></script>
-    <script type="text/javascript" src="web_src/visu.js"></script>
+    <script type="text/javascript" src="web_src/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="web_src/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="web_src/chart/Chart.min.js"></script>
+    <script type="text/javascript" src="web_src/chart/Chart.bundle.min.js"></script>
 	<script type="text/javascript" src="https://api.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js"></script>
+    <script type="text/javascript" src="web_src/tools.js" defer></script>
+    <script type="text/javascript" src="web_src/mainInit.js" defer></script>
+    <script type="text/javascript" src="web_src/load.js" defer></script>
+    <script type="text/javascript" src="web_src/visu.js" defer></script>
 </head>
 <body>
     <div id="navbar">
@@ -28,5 +32,11 @@
         </table>
     </div>
     <div id="page-content"></div>
+    <div id="dialog" title="Choisissez votre visualisation">
+        <input type="button" value="Carte simple" onclick="javascript:selectMapYear();" /><br />
+        <input type="button" value="Histogramme" onclick="javascript:addTestChart();" /><br />
+    </div>
+    <div id="dialog-map-year" title="Choisissez l'année de la carte"></div>
+    </script>
 </body>
 </html>

@@ -78,6 +78,7 @@ input[type="button"] {
     width: calc(50% - 60px);
     border-radius: 20px;
     background-color: #bdc3c7;
+    vertical-align: top;
 }
 
 .visualization > .title {
@@ -95,4 +96,12 @@ input[type="button"] {
 
 .mapboxgl-canvas-container {
     height: 40vw!important;
+}
+
+#dialog, #dialog-map-year {
+    display: none;
+}
+
+#dialog > input[type="button"], #dialog-map-year > input[type="button"] {
+    width: 100%;
 }
