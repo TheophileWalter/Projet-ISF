@@ -5,8 +5,16 @@ function addVisualization() {
     });
 }
 
+// Display the chart selection dialog
+function selectChart() {
+    closeDialog('dialog');
+    $(function() {
+        $('#dialog-chart').dialog();
+    });
+}
+
 // Add a test chart
-function addTestChart() {
+function displayChart(transformation) {
 
     // Prepare the histogram
     var chartId = 'chartjs-' + Math.random();
@@ -14,7 +22,15 @@ function addTestChart() {
     var ctx = document.getElementById(chartId).getContext('2d');
 
     // Prepare the data
+    labels = {};
+    data = {};
+    switch (transformation) {
 
+        case 'yearly-mean-by-city':
+            
+        break;
+
+    }
 
     // Add data to histogram
     var myChart = new Chart(ctx, {

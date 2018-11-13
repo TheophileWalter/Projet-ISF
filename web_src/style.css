@@ -98,12 +98,12 @@ input[type="button"] {
     height: 40vw!important;
 }
 
-#dialog, #dialog-map-year {
+.dialog {
     display: none;
 }
 
-#dialog > input[type="button"], #dialog-map-year > input[type="button"] {
-    width: 100%;
+.dialog > input[type="button"] {
+    width: calc(100% - 12px);
 }
 
 .close-visu {

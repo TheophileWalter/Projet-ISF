@@ -32,11 +32,21 @@
         </table>
     </div>
     <div id="page-content"></div>
-    <div id="dialog" title="Choisissez votre visualisation">
+    <div id="dialog" class="dialog" title="Choisissez votre visualisation">
         <input type="button" value="Carte simple" onclick="javascript:selectMapYear();" /><br />
-        <input type="button" value="Histogramme" onclick="javascript:addTestChart();" /><br />
+        <input type="button" value="Histogramme" onclick="javascript:selectChart();" /><br />
     </div>
-    <div id="dialog-map-year" title="Choisissez l'année de la carte"></div>
-    </script>
+    <div id="dialog-map-year" class="dialog" title="Choisissez l'année de la carte"></div>
+    <div id="dialog-chart" class="dialog" title="Choisissez la représentation">
+        <input type="button" value="Moyenne annuelle par ville" onclick="javascript:displayChart('yearly-mean-by-city');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="Moyenne par année" onclick="javascript:displayChart('mean-by-year');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="Maximum par année" onclick="javascript:displayChart('max-by-year');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="Minimum par année" onclick="javascript:displayChart('min-by-year');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="" onclick="javascript:displayChart('');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="" onclick="javascript:displayChart('');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="" onclick="javascript:displayChart('');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="" onclick="javascript:displayChart('');closeDialog('dialog-map-year');" /><br />
+        <input type="button" value="" onclick="javascript:displayChart('');closeDialog('dialog-map-year');" /><br />
+    </div>
 </body>
 </html>
