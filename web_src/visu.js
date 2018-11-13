@@ -79,6 +79,8 @@ function addMap(title, geoData) {
         center: [2.5, 46.5]
     });
 
+    /*
+    // French Map with marker
     // Add navigation controls
     map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
@@ -94,7 +96,7 @@ function addMap(title, geoData) {
     // loop data
     geoData.forEach(elements => {
         setCoords(elements[1], elements[0], "impôt moyen : "+elements[2]+"€<br />ville : "+elements[3]);
-    });
+    });*/
 }
 
 // Append a visualization to the page

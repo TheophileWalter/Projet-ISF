@@ -15,12 +15,21 @@ function mainInit() {
                 console.log('Error on ' + code + ' year ' + key);
                 console.log(data[key][i]);
             } else {
-                preparedLocations.push([loc['lat'], loc['lon'], data[key][i]['Impôt moyen en €'], data[key][i]['Commune']]);
+                preparedLocations.push({
+                    "type": "Feature",
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [loc['lat'], loc['lon']]
+                    },
+                    "properties": {
+                      "name": data[key][i]['Commune'],
+                      "value": data[key][i]['Impôt moyen en €']
+                    }
+                  });
             }
         }
 
         // Creates the map
-        fullLocations = preparedLocations;
-
+        fullLocations[key] = {"type": "FeatureCollection", "features": preparedLocations};
     });
 }
