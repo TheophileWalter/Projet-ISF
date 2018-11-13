@@ -57,9 +57,7 @@ function addTestChart() {
 
 // Select a year for the map
 function selectMapYear() {
-    $(function() {
-        $('#dialog').dialog('close');
-    });
+    closeDialog('dialog');
     $(function() {
         $('#dialog-map-year').dialog();
     });
