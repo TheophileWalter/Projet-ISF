@@ -15,15 +15,18 @@ function mainInit() {
                 console.log('Error on ' + code + ' year ' + key);
                 console.log(data[key][i]);
             } else {
+                console.log(data[key][i]['Impôt moyen en €']);
                 preparedLocations.push({
                     "type": "Feature",
                     "geometry": {
                       "type": "Point",
-                      "coordinates": [loc['lat'], loc['lon']]
+                      "coordinates": [loc['lon'], loc['lat']]
                     },
                     "properties": {
                       "name": data[key][i]['Commune'],
-                      "value": data[key][i]['Impôt moyen en €']
+                      "value": data[key][i]['Impôt moyen en €'],
+                      "redevables": data[key][i]['Nombre de redevables'],
+                      "sizec": 6+Math.round(Math.sqrt(data[key][i]['Impôt moyen en €']/30))
                     }
                   });
             }
