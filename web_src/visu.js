@@ -16,18 +16,41 @@ function selectChart() {
 // Add a test chart
 function displayChart(transformation) {
 
+    closeDialog('dialog-chart');
+
     // Prepare the histogram
     var chartId = 'chartjs-' + Math.random();
     appendToBody('Chart test', '<canvas id="' + chartId + '" width="400" height="400"></canvas>');
     var ctx = document.getElementById(chartId).getContext('2d');
 
     // Prepare the data
-    labels = {};
-    data = {};
+    var chartLabels = [];
+    var chartData = [];
+    var chartDatasets = [];
     switch (transformation) {
 
         case 'yearly-mean-by-city':
-            
+
+        break;
+
+        case 'mean-by-year':
+            Object.keys(data).forEach(function(key) {
+                chartLabels.push(key);
+                var sum = 0;
+                var total = 0;
+                for (var i = 0; i < data[key].length; i++) {
+                    var nb = parseFloat(data[key][i]['Nombre de redevables']);
+                    sum += parseFloat(data[key][i]['Impôt moyen en €']) * nb;
+                    total += nb;
+                }
+                chartData.push(parseInt(sum/total));
+            });
+            chartDatasets = [{
+                label: 'Valeur moyenne par redevable',
+                data: chartData,
+                borderWidth: 1
+            }];
+            console.log(chartDatasets);
         break;
 
     }
@@ -36,28 +59,8 @@ function displayChart(transformation) {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
+            labels: chartLabels,
+            datasets: chartDatasets
         },
         options: {
             scales: {
