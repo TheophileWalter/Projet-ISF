@@ -83,7 +83,7 @@ function selectMapYear() {
 }
 
 // Add a map to the page
-function addMap(title, geoData) {
+function addMap(title, geoData, typeMap) {
 
     // Create a visualization
     var v = appendToBody(title, "");
@@ -99,41 +99,79 @@ function addMap(title, geoData) {
 
     map.on('load', function () {
 
-        map.addSource("source1",{
+        map.addSource("source",{
             "data": geoData,
             "type": "geojson",
         });
 
-        map.addLayer({
-            "id": "points",
-            "type": "circle",
-            "source": "source1",
-            "paint":{
-                "circle-color" :"#F00",
-                "circle-radius": ["number", ['get', 'sizec'], 2],
-                "circle-stroke-width": 1
-            }
-        });
+        switch (typeMap){
+            case "normalMap":
+                map.addLayer({
+                    "id": "points",
+                    "type": "circle",
+                    "source": "source1",
+                    "paint":{
+                        "circle-color" :"#F00",
+                        "circle-radius": ["number", ['get', 'sizec'], 2],
+                        "circle-stroke-width": 1
+                    }
+                });
+            case "heatMap":
+                map.addLayer({
+                    id: 'trees-heat',
+                    type: 'heatmap',
+                    source: 'source',
+                    maxzoom: 15,
+                    paint: {
+                    // increase weight as diameter breast height increases
+                    'heatmap-weight': {
+                        property: 'dbh',
+                        type: 'exponential',
+                        stops: [
+                        [1, 0],
+                        [62, 1]
+                        ]
+                    },
+                    // increase intensity as zoom level increases
+                    'heatmap-intensity': {
+                        stops: [
+                        [11, 1],
+                        [15, 3]
+                        ]
+                    },
+                    // assign color values be applied to points depending on their density
+                    'heatmap-color': [
+                        'interpolate',
+                        ['linear'],
+                        ['heatmap-density'],
+                        0, 'rgba(236,222,239,0)',
+                        0.2, 'rgb(208,209,230)',
+                        0.4, 'rgb(166,189,219)',
+                        0.6, 'rgb(103,169,207)',
+                        0.8, 'rgb(28,144,153)'
+                    ],
+                    // increase radius as zoom increases
+                    'heatmap-radius': {
+                        stops: [
+                        [11, 15],
+                        [15, 20]
+                        ]
+                    },
+                    // decrease opacity to transition into the circle layer
+                    'heatmap-opacity': {
+                        default: 1,
+                        stops: [
+                        [14, 1],
+                        [15, 0]
+                        ]
+                    },
+                    }
+                }, 'waterway-label');
+            default:
+                console.log("ERROR : type map / switch case") 
+        }       
     });
 }
-    /*
-    // French Map with marker
-    // Add navigation controls
-    map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-
-    // Draw coordinates
-    function setCoords(x, y, text) {
-        var pointCoord = [x, y];
-        marker = new mapboxgl.Marker()
-                .setLngLat(pointCoord)
-                .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(text))
-                .addTo(map);		
-    }
-
-    // loop data
-    geoData.forEach(elements => {
-        setCoords(elements[1], elements[0], "impôt moyen : "+elements[2]+"€<br />ville : "+elements[3]);
-    });*/
 
 // Append a visualization to the page
 function appendToBody(title, content) {
