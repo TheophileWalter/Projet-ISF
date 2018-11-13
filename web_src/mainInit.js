@@ -15,7 +15,6 @@ function mainInit() {
                 console.log('Error on ' + code + ' year ' + key);
                 console.log(data[key][i]);
             } else {
-                console.log(data[key][i]['Impôt moyen en €']);
                 preparedLocations.push({
                     "type": "Feature",
                     "geometry": {
