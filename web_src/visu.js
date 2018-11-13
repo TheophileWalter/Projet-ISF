@@ -80,12 +80,19 @@ function addMap(title, geoData) {
 
     map.on('load', function () {
 
+        map.addSource("source1",{
+            "data": geoData,
+            "type": "geojson",
+        });
+
         map.addLayer({
             "id": "points",
-            "type": "symbol",
-            "source": {
-                "type": "geojson",
-                "data": {geoData}
+            "type": "circle",
+            "source": "source1",
+            "paint":{
+                "circle-color" :"#F00",
+                "circle-radius": ["number", ['get', 'sizec'], 2],
+                "circle-stroke-width": 1
             }
         });
     });
