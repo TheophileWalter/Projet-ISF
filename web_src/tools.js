@@ -25,4 +25,11 @@ function escapeHtml(unsafe) {
          .replace(/>/g, "&gt;")
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
- }
+}
+
+// Close a JQuery UI popup
+function closeDialog(id) {
+    $(function() {
+        $('#dialog').dialog('close');
+    });
+}
