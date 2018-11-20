@@ -146,6 +146,7 @@ function addMap(title, geoData, typeMap) {
         center: [2.5, 46.5]
     });
 
+    // https://www.mapbox.com/help/mapbox-gl-js-expressions/
     map.on('load', function () {
 
         map.addSource("source",{
@@ -153,19 +154,27 @@ function addMap(title, geoData, typeMap) {
             "type": "geojson",
         });
 
-        typeMap = "normalMap";
         switch (typeMap){
             case "normalMap":
                 map.addLayer({
-                    "id": "points",
-                    "type": "circle",
-                    "source": "source1",
-                    "paint":{
-                        "circle-color" :"#F00",
-                        "circle-radius": ["number", ['get', 'sizec'], 2],
-                        "circle-stroke-width": 1
+                    id: "points",
+                    type: "circle",
+                    source: "source",
+                    paint: {
+                        'circle-color' :"#F00",
+                        'circle-radius': {
+                            property: 'value',
+                            type: 'exponential',
+                            stops: [
+                              [1, 1],
+                              [100, 10],
+                              [1000, 50]
+                            ]
+                          },
+                        'circle-stroke-width': 1
                     }
                 });
+                break;
             case "heatMap":
                 map.addLayer({
                     id: 'trees-heat',
@@ -217,8 +226,7 @@ function addMap(title, geoData, typeMap) {
                     },
                     }
                 }, 'waterway-label');
-            default:
-                console.log("ERROR : type map / switch case") 
+                break;
         }       
     });
 }
