@@ -20,7 +20,7 @@ function displayChart(transformation) {
 
     // Prepare the histogram
     var chartId = 'chartjs-' + Math.random();
-    appendToBody('Chart test', '<canvas id="' + chartId + '" width="400" height="350"></canvas>');
+    appendToBody('Histogramme', '<canvas id="' + chartId + '" width="400" height="350"></canvas>');
     var ctx = document.getElementById(chartId).getContext('2d');
 
     // Prepare the data
@@ -30,17 +30,43 @@ function displayChart(transformation) {
 
         case 'yearly-mean-by-city':
             var chartData = [];
+            var cityTotal = [];
             Object.keys(data).forEach(function(key) {
-                chartLabels.push(key);
-                var sum = 0;
-                var total = 0;
+
+                // For each city in the year
                 for (var i = 0; i < data[key].length; i++) {
-                    var nb = parseFloat(data[key][i]['Nombre de redevables']);
-                    sum += parseFloat(data[key][i]['Impôt moyen en €']) * nb;
-                    total += nb;
+                    var city = data[key][i]['Commune'];
+
+                    // Check if we must add the city in the list
+                    if (chartLabels.indexOf(city) === -1) {
+                        cityTotal.push(0);
+                        chartLabels.push(city);
+                        chartData.push(0);
+                    }
+
+                    // Get the index of the city
+                    var index = chartLabels.indexOf(city);
+
+                    // Add te value
+                    chartData[index] += parseFloat(data[key][i]['Impôt moyen en €']);
+                    cityTotal[index] += 1;
+
                 }
-                chartData.push(parseInt(sum/total));
+
             });
+
+            // Divide the values to compute the mean
+            for (var i = 0; i < chartData.length; i++) {
+                chartData[i] = parseInt(chartData[i]/cityTotal[i]);
+            }
+
+            // Sort them
+            chartLabels = refSort(chartLabels, chartData);
+            chartData.sort(function(a, b) {return a-b});
+
+            console.log(chartData);
+            console.log(chartLabels);
+
             var chartDatasets = [{
                 label: 'Moyenne annuelle par ville',
                 data: chartData,
@@ -63,6 +89,27 @@ function displayChart(transformation) {
             });
             var chartDatasets = [{
                 label: 'Valeur moyenne par redevable',
+                data: chartData,
+                borderWidth: 1
+            }];
+        break;
+
+        case 'max-by-year':
+        case 'min-by-year':
+            var isMax = transformation.indexOf('max') === 0;
+            var chartData = [];
+            Object.keys(data).forEach(function(key) {
+                chartLabels.push(key);
+                var res = isMax ? 0 : Number.MAX_VALUE;
+                for (var i = 0; i < data[key].length; i++) {
+                    var v = parseFloat(data[key][i]['Impôt moyen en €']);
+                    var func = isMax ? Math.max : Math.min;
+                    res = func(res, v);
+                }
+                chartData.push(parseInt(res));
+            });
+            var chartDatasets = [{
+                label: (isMax ? 'Max' : 'Min') + 'imum par année',
                 data: chartData,
                 borderWidth: 1
             }];
