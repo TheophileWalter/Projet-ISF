@@ -35,7 +35,7 @@ function mainInit() {
         fullLocations[key] = {"type": "FeatureCollection", "features": preparedLocations};
 
         // Add button to map selector
-        document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:addMap(\'Carte de France - ' + key + '\', fullLocations[\'' + key + '\'], \'heatMap\');closeDialog(\'dialog-map-year\');" /><br />';
+        document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:selectMapType(' + key + ');" /><br />';
 
     });
 }
