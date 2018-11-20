@@ -23,8 +23,8 @@ function mainInit() {
                     },
                     "properties": {
                       "name": data[key][i]['Commune'],
-                      "value": data[key][i]['Impôt moyen en €'],
-                      "redevables": data[key][i]['Nombre de redevables']
+                      "value": parseInt(data[key][i]['Impôt moyen en €']),
+                      "redevables": parseInt(data[key][i]['Nombre de redevables'])
                     }
                   });
             }

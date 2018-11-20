@@ -158,20 +158,19 @@ function addMap(title, geoData, typeMap) {
             case "normalMap":
                 map.addLayer({
                     id: "points",
-                    type: "circle",
-                    source: "source",
+                    type: 'circle',
+                    source: 'source',
                     paint: {
-                        'circle-color' :"#F00",
                         'circle-radius': {
                             property: 'value',
                             type: 'exponential',
                             stops: [
-                              [1, 1],
-                              [100, 10],
-                              [1000, 50]
+                              [1000, 1],
+                              [30000, 30]
                             ]
                           },
-                        'circle-stroke-width': 1
+                        'circle-opacity': 0.8,
+                        'circle-color': 'rgb(171, 72, 33)'
                     }
                 });
                 break;
@@ -184,7 +183,7 @@ function addMap(title, geoData, typeMap) {
                     paint: {
                     // increase weight as diameter breast height increases
                     'heatmap-weight': {
-                        property: 'dbh',
+                        property: 'value',
                         type: 'exponential',
                         stops: [
                         [1, 0],
