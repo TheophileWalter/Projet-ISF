@@ -24,8 +24,7 @@ function mainInit() {
                     "properties": {
                       "name": data[key][i]['Commune'],
                       "value": data[key][i]['Impôt moyen en €'],
-                      "redevables": data[key][i]['Nombre de redevables'],
-                      "sizec": 6+Math.round(Math.sqrt(data[key][i]['Impôt moyen en €']/10))
+                      "redevables": data[key][i]['Nombre de redevables']
                     }
                   });
             }

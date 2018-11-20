@@ -16,41 +16,18 @@ function selectChart() {
 // Add a test chart
 function displayChart(transformation) {
 
-    closeDialog('dialog-chart');
-
     // Prepare the histogram
     var chartId = 'chartjs-' + Math.random();
     appendToBody('Chart test', '<canvas id="' + chartId + '" width="400" height="400"></canvas>');
     var ctx = document.getElementById(chartId).getContext('2d');
 
     // Prepare the data
-    var chartLabels = [];
-    var chartData = [];
-    var chartDatasets = [];
+    labels = {};
+    data = {};
     switch (transformation) {
 
         case 'yearly-mean-by-city':
-
-        break;
-
-        case 'mean-by-year':
-            Object.keys(data).forEach(function(key) {
-                chartLabels.push(key);
-                var sum = 0;
-                var total = 0;
-                for (var i = 0; i < data[key].length; i++) {
-                    var nb = parseFloat(data[key][i]['Nombre de redevables']);
-                    sum += parseFloat(data[key][i]['Impôt moyen en €']) * nb;
-                    total += nb;
-                }
-                chartData.push(parseInt(sum/total));
-            });
-            chartDatasets = [{
-                label: 'Valeur moyenne par redevable',
-                data: chartData,
-                borderWidth: 1
-            }];
-            console.log(chartDatasets);
+            
         break;
 
     }
@@ -59,8 +36,28 @@ function displayChart(transformation) {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: chartLabels,
-            datasets: chartDatasets
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
         },
         options: {
             scales: {
@@ -82,21 +79,6 @@ function selectMapYear() {
     });
 }
 
-// Select a type for the map
-function selectMapType(year) {
-    closeDialog('dialog-map-year');
-    document.getElementById('dialog-map-year-normal').year = year;
-    document.getElementById('dialog-map-year-heat').year = year;
-    $(function() {
-        $('#dialog-map-type').dialog();
-    });
-}
-
-// Called on click on add map button
-function addMapButton(type, year) {
-    addMap('Carte de France ' + year, fullLocations[year], type);
-}
-
 // Add a map to the page
 function addMap(title, geoData, typeMap) {
 
@@ -112,88 +94,81 @@ function addMap(title, geoData, typeMap) {
         center: [2.5, 46.5]
     });
 
-        switch (typeMap) {
+    map.on('load', function () {
+
+        map.addSource("source",{
+            "data": geoData,
+            "type": "geojson",
+        });
+
+        typeMap = "normalMap";
+        switch (typeMap){
             case "normalMap":
-
-                map.on('load', function () {
-
-                    map.addSource("source",{
-                        "data": geoData,
-                        "type": "geojson",
-                    });
-                    map.addLayer({
-                        "id": "points",
-                        "type": "circle",
-                        "source": "source",
-                        "paint":{
-                            "circle-color" :"#F00",
-                            "circle-radius": ["number", ['get', 'sizec'], 2],
-                            "circle-stroke-width": 1
-                        }
-                    });
+                map.addLayer({
+                    "id": "points",
+                    "type": "circle",
+                    "source": "source1",
+                    "paint":{
+                        "circle-color" :"#F00",
+                        "circle-radius": ["number", ['get', 'sizec'], 2],
+                        "circle-stroke-width": 1
+                    }
                 });
-
-                break;
             case "heatMap":
-                map.on('load', function () {
-
-                    map.addSource("source",{
-                        "data": geoData,
-                        "type": "geojson",
-                    });
-                    map.addLayer({
-                        id: 'trees-heat',
-                        type: 'heatmap',
-                        source: 'source',
-                        maxzoom: 15,
-                        paint: {
-                            // increase weight as diameter breast height increases
-                            'heatmap-weight': {
-                                property: 'dbh',
-                                type: 'exponential',
-                                stops: [
-                                [1, 0],
-                                [62, 1]
-                                ]
-                            },
-                            // increase intensity as zoom level increases
-                            'heatmap-intensity': {
-                                stops: [
-                                [11, 1],
-                                [15, 3]
-                                ]
-                            },
-                            // assign color values be applied to points depending on their density
-                            'heatmap-color': [
-                                'interpolate',
-                                ['linear'],
-                                ['heatmap-density'],
-                                0, 'rgba(236,222,239,0)',
-                                0.2, 'rgb(208,209,230)',
-                                0.4, 'rgb(166,189,219)',
-                                0.6, 'rgb(103,169,207)',
-                                0.8, 'rgb(28,144,153)'
-                            ],
-                            // increase radius as zoom increases
-                            'heatmap-radius': {
-                                stops: [
-                                [11, 15],
-                                [15, 20]
-                                ]
-                            },
-                            // decrease opacity to transition into the circle layer
-                            'heatmap-opacity': {
-                                default: 1,
-                                stops: [
-                                [14, 1],
-                                [15, 0]
-                                ]
-                            },
-                        }
-                    }, 'waterway-label');
-                });
-                break;
-        }
+                map.addLayer({
+                    id: 'trees-heat',
+                    type: 'heatmap',
+                    source: 'source',
+                    maxzoom: 15,
+                    paint: {
+                    // increase weight as diameter breast height increases
+                    'heatmap-weight': {
+                        property: 'dbh',
+                        type: 'exponential',
+                        stops: [
+                        [1, 0],
+                        [62, 1]
+                        ]
+                    },
+                    // increase intensity as zoom level increases
+                    'heatmap-intensity': {
+                        stops: [
+                        [11, 1],
+                        [15, 3]
+                        ]
+                    },
+                    // assign color values be applied to points depending on their density
+                    'heatmap-color': [
+                        'interpolate',
+                        ['linear'],
+                        ['heatmap-density'],
+                        0, 'rgba(236,222,239,0)',
+                        0.2, 'rgb(208,209,230)',
+                        0.4, 'rgb(166,189,219)',
+                        0.6, 'rgb(103,169,207)',
+                        0.8, 'rgb(28,144,153)'
+                    ],
+                    // increase radius as zoom increases
+                    'heatmap-radius': {
+                        stops: [
+                        [11, 15],
+                        [15, 20]
+                        ]
+                    },
+                    // decrease opacity to transition into the circle layer
+                    'heatmap-opacity': {
+                        default: 1,
+                        stops: [
+                        [14, 1],
+                        [15, 0]
+                        ]
+                    },
+                    }
+                }, 'waterway-label');
+            default:
+                console.log("ERROR : type map / switch case") 
+        }       
+    });
 }
 
 // Append a visualization to the page
