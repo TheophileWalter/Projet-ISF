@@ -20,20 +20,16 @@ function displayChart(transformation) {
 
     // Prepare the histogram
     var chartId = 'chartjs-' + Math.random();
-    appendToBody('Chart test', '<canvas id="' + chartId + '" width="400" height="400"></canvas>');
+    appendToBody('Chart test', '<canvas id="' + chartId + '" width="400" height="350"></canvas>');
     var ctx = document.getElementById(chartId).getContext('2d');
 
     // Prepare the data
     var chartLabels = [];
-    var chartData = [];
     var chartDatasets = [];
     switch (transformation) {
 
         case 'yearly-mean-by-city':
-
-        break;
-
-        case 'mean-by-year':
+            var chartData = [];
             Object.keys(data).forEach(function(key) {
                 chartLabels.push(key);
                 var sum = 0;
@@ -45,12 +41,31 @@ function displayChart(transformation) {
                 }
                 chartData.push(parseInt(sum/total));
             });
-            chartDatasets = [{
+            var chartDatasets = [{
+                label: 'Moyenne annuelle par ville',
+                data: chartData,
+                borderWidth: 1
+            }];
+        break;
+
+        case 'mean-by-year':
+            var chartData = [];
+            Object.keys(data).forEach(function(key) {
+                chartLabels.push(key);
+                var sum = 0;
+                var total = 0;
+                for (var i = 0; i < data[key].length; i++) {
+                    var nb = parseFloat(data[key][i]['Nombre de redevables']);
+                    sum += parseFloat(data[key][i]['Impôt moyen en €']) * nb;
+                    total += nb;
+                }
+                chartData.push(parseInt(sum/total));
+            });
+            var chartDatasets = [{
                 label: 'Valeur moyenne par redevable',
                 data: chartData,
                 borderWidth: 1
             }];
-            console.log(chartDatasets);
         break;
 
     }
@@ -95,6 +110,7 @@ function selectMapType(year) {
 // Called on click on add map button
 function addMapButton(type, year) {
     addMap('Carte de France ' + year, fullLocations[year], type);
+    closeDialog('dialog-map-type');
 }
 
 // Add a map to the page

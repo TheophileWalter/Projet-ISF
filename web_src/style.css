@@ -114,3 +114,8 @@ input[type="button"] {
     content: '\274C';
     cursor: pointer;
 }
+
+/* Removes MapBox credentials */
+.mapboxgl-ctrl-bottom-right {
+    display: none!important;
+}
