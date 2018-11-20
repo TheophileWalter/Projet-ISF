@@ -145,8 +145,7 @@ function addMap(title, geoData, typeMap) {
         zoom: 4,
         center: [2.5, 46.5]
     });
-
-    // https://www.mapbox.com/help/mapbox-gl-js-expressions/
+    
     map.on('load', function () {
 
         map.addSource("source",{
@@ -160,6 +159,10 @@ function addMap(title, geoData, typeMap) {
                     id: "points",
                     type: 'circle',
                     source: 'source',
+                    cluster: true,
+                    clusterMaxZoom: 14, // Max zoom to cluster points on
+                    clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
+                    filter: ["has", "value"],
                     paint: {
                         'circle-radius': {
                             property: 'value',
@@ -168,12 +171,34 @@ function addMap(title, geoData, typeMap) {
                               [1000, 1],
                               [30000, 30]
                             ]
-                          },
-                        'circle-opacity': 0.8,
-                        'circle-color': 'rgb(171, 72, 33)'
+                        },
+                        'circle-color': [
+                            "step", ["get", "value"],
+                            "#f1c40f",
+                            5000,
+                            "#d35400",
+                            12000,
+                            "#e67e22",
+                            20000,
+                            "#c0392b"
+                        ],
+                        'circle-opacity': 1
+                    }
+                });
+                
+                map.addLayer({
+                    id: "circle_count",
+                    type: "symbol",
+                    source: "source",
+                    filter: ["has", "value"],
+                    layout: {
+                        "text-field": "{value}",
+                        "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+                        "text-size": 0
                     }
                 });
                 break;
+            
             case "heatMap":
                 map.addLayer({
                     id: 'trees-heat',
