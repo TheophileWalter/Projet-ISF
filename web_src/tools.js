@@ -57,13 +57,13 @@ function refSort (targetData, refData) {
 
 // Make a canvas fit it's container
 // From https://stackoverflow.com/a/10215724
-function fitToContainer(canvas){
+function fitToContainer(canvas, ratio){
     // Make it visually fill the positioned parent
     canvas.style.width ='100%';
     canvas.style.height='100%';
     // ...then set the internal size to match
     canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetWidth;
+    canvas.height = canvas.offsetWidth*ratio;
 }
 
 // Return the length of an on bject
@@ -112,4 +112,105 @@ function HSVtoRGB(h, s, v) {
         g: Math.round(g * 255),
         b: Math.round(b * 255)
     };
+}
+
+// Add data to a chart.js
+function chartAddData(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}
+
+// Add annotations
+function chartAddAnnotations(chart, annotation) {
+    chart.options.annotation.annotations.push(annotation);
+    chart.update();
+}
+
+// Remove data from a chart.js
+function chartRemoveData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+}
+
+// Add an horizontal line to a chart
+function chartAddHorizontalLine(chart, value, name, color) {
+    chartAddAnnotations(chart, {
+        type: 'line',
+        mode: 'horizontal',
+        scaleID: 'y-axis-0',
+        value: value,
+        borderColor: color,
+        borderWidth: 4,
+        label: {
+            enabled: true,
+            content: name
+        }
+    });
+}
+
+// Function for checkbox change
+function checkboxAnnotation(box, chartId, type) {
+
+    // Configuration
+    var names = {'mean':'Moyenne', 'min':'Minimum', 'max':'Maximum', 'med':'Médiane'};
+    var colors = {'mean':'#e55039', 'min':'#f6b93b', 'max':'#78e08f', 'med':'#6a89cc'};
+
+    // Add line
+    if (box.checked) {
+
+        // Compute the value
+        var value = 0;
+        switch (type) {
+            case 'mean':
+                for (var i = 0; i < chartList[chartId].data.datasets[0].data.length; i++) {
+                    value += chartList[chartId].data.datasets[0].data[i];
+                }
+                value /= chartList[chartId].data.datasets[0].data.length;
+                break;
+            case 'min':
+                value = Math.min(...chartList[chartId].data.datasets[0].data);
+                break;
+            case 'max':
+                value = Math.max(...chartList[chartId].data.datasets[0].data);
+                break;
+            case 'med':
+                values = chartList[chartId].data.datasets[0].data.slice();
+                values.sort(function(a,b){return a-b;});
+                if (values.length === 0) {
+                    value = 0;
+                } else {
+                    var half = Math.floor(values.length / 2);
+                    if (values.length % 2) {
+                        value = values[half];
+                    } else {
+                        value = (values[half - 1] + values[half]) / 2.0;
+                    }
+                }
+                break;
+        }
+
+        chartAddHorizontalLine(chartList[chartId], value, names[type], colors[type]); 
+    }
+    // Remove line
+    else {
+
+        // Find the ID
+        var id = -1;
+        for (var i = 0; i < chartList[chartId].options.annotation.annotations.length; i++) {
+            if (chartList[chartId].options.annotation.annotations[i].label.content == names[type]) {
+                chartList[chartId].options.annotation.annotations.splice(i, 1);
+                break;
+            }
+        }
+
+        // Update
+        chartList[chartId].update();
+
+    }
 }

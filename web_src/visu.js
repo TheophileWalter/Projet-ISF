@@ -20,7 +20,7 @@ function displayChart(transformation) {
 
     // Prepare the histogram
     var chartId = 'chartjs-' + Math.random();
-    appendToBody('Histogramme', '<canvas id="' + chartId + '" width="400" height="350"></canvas>');
+    var ids = appendToBody('Histogramme', '<canvas id="' + chartId + '" width="400" height="350"></canvas>');
     var ctx = document.getElementById(chartId).getContext('2d');
 
     // Prepare the data
@@ -63,9 +63,6 @@ function displayChart(transformation) {
             // Sort them
             chartLabels = refSort(chartLabels, chartData);
             chartData.sort(function(a, b) {return a-b});
-
-            console.log(chartData);
-            console.log(chartLabels);
 
             var chartDatasets = [{
                 label: 'Moyenne annuelle par ville',
@@ -132,9 +129,29 @@ function displayChart(transformation) {
                         max: 40000
                     }
                 }]
+            },
+            // Need to initialize the annotations to be able to add new after
+            annotation: {
+                annotations: []
             }
         }
     });
+
+    // Saves the chart
+    var chartId = "chart-" + Math.random();
+    chartList[chartId] = myChart;
+
+    // Add the checkboxs
+    var checkBoxes = document.createElement('div');
+    checkBoxes.innerHTML = 
+        '<table cellspacing="0" cellpadding="0" border="0" style="width:100%;"><tr>' +
+        '<td style="width:25%;"><label for="' + ids.content + '-mean">Moyenne</label><input type="checkbox" id="' + ids.content + '-mean" onchange="javascript:checkboxAnnotation(this,\'' + chartId + '\',\'mean\');"></td>' +
+        '<td style="width:25%;"><label for="' + ids.content + '-min">Minimum</label><input type="checkbox" id="' + ids.content + '-min" onchange="javascript:checkboxAnnotation(this,\'' + chartId + '\',\'min\');"></td>' +
+        '<td style="width:25%;"><label for="' + ids.content + '-max">Maximum</label><input type="checkbox" id="' + ids.content + '-max" onchange="javascript:checkboxAnnotation(this,\'' + chartId + '\',\'max\');"></td>' +
+        '<td style="width:25%;"><label for="' + ids.content + '-med">Médiane</label><input type="checkbox" id="' + ids.content + '-med" onchange="javascript:checkboxAnnotation(this,\'' + chartId + '\',\'med\');"></td>' +
+        '</tr></table>';
+    document.getElementById(ids.content).appendChild(checkBoxes);
+
 }
 
 // Select a year for the map
@@ -290,15 +307,15 @@ function addParallelCoordinates() {
 
     // Prepare the canvas and the context
     var canvasId = 'chartjs-' + Math.random();
-    appendToBody('Coordonnées parallèles', '<canvas id="' + canvasId + '"></canvas>');
+    appendToBody('Coordonnées parallèles', 'Impôt moyen des villes par années<br /><canvas id="' + canvasId + '"></canvas>');
     var canvas = document.getElementById(canvasId);
-    fitToContainer(canvas);
+    fitToContainer(canvas, 0.7);
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = "black";
 
     // Compute some sizes
     var offsetWidth = canvas.width/20;
-    var offsetHeight = canvas.height/20;
+    var offsetHeight = canvas.height/30;
     var yearWidth = (canvas.width-2*offsetWidth)/(oLength(data)-1);
     var fontSize = parseInt(canvas.width/50);
     var fontSmallSize = parseInt(canvas.width/70);
