@@ -200,7 +200,7 @@ function addMap(title, geoData, typeMap) {
                     data: geoData,
                     type: "geojson",
                     cluster: true,
-                    clusterMaxZoom: 6,
+                    clusterMaxZoom: 16,
                     clusterRadius: 50,
                 });
 
@@ -213,18 +213,22 @@ function addMap(title, geoData, typeMap) {
                             property: 'point_count',
                             type: 'interval',
                             stops: [
-                                [0, '#41A337'],
-                                [100, '#2D7026'],
-                                [750, '#0B5703'],
+                                [0, '#8DB255'],
+                                [10, '#41A337'],
+                                [30, '#2D7026'],
+                                [75, '#407A52'],
+                                [150, '#006442']
                             ]
                         },
                         'circle-radius': {
                             property: 'point_count',
                             type: 'interval',
                             stops: [
-                                [0, 20],
-                                [100, 30],
-                                [750, 40]
+                                [0, 10],
+                                [10, 15],
+                                [30, 20],
+                                [75, 30],
+                                [150, 45]
                             ]
                         }
                     }
