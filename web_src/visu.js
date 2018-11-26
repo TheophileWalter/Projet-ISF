@@ -200,53 +200,53 @@ function addMap(title, geoData, typeMap) {
                     data: geoData,
                     type: "geojson",
                     cluster: true,
-                    clusterMaxZoom: 16,
-                    clusterRadius: 30,
+                    clusterMaxZoom: 6,
+                    clusterRadius: 50,
                 });
-    
+
                 map.addLayer({
                     id: 'clusters',
                     type: 'circle',
                     source: 'source',
                     paint: {
                         'circle-color': {
-                            property: 'value',
+                            property: 'point_count',
                             type: 'interval',
                             stops: [
                                 [0, '#41A337'],
-                                [10000, '#2D7026'],
-                                [20000, '#0B5703'],
+                                [100, '#2D7026'],
+                                [750, '#0B5703'],
                             ]
                         },
                         'circle-radius': {
-                            property: 'value',
+                            property: 'point_count',
                             type: 'interval',
                             stops: [
                                 [0, 20],
-                                [10000, 30],
-                                [20000, 40]
+                                [100, 30],
+                                [750, 40]
                             ]
                         }
-                        }
+                    }
                 });
-                
+    
                 map.addLayer({
                     id: 'cluster-count',
                     type: 'symbol',
                     source: 'source',
-                    filter: ["has", 'value'],
+                    filter: ['has', 'point_count'],
                     layout: {
-                        'text-field': '{value}',
+                        'text-field': '{point_count}',
                         'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
                         'text-size': 12
                     }
                 });
-
+    
                 map.addLayer({
-                    id: 'values',
+                    id: 'airport',
                     type: 'circle',
                     source: 'source',
-                    filter: ['!has', 'value'],
+                    filter: ['!has', 'point_count'],
                     paint: {
                         'circle-color': '#1EF008',
                         'circle-radius': 6,
@@ -254,6 +254,7 @@ function addMap(title, geoData, typeMap) {
                         'circle-stroke-color': '#fff'
                     }
                 });
+
                 break;
             
             case "heatMap":
