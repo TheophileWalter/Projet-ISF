@@ -177,59 +177,74 @@ function addMap(title, geoData, typeMap) {
     });
     
     map.on('load', function () {
-
-        map.addSource("source",{
-            "data": geoData,
-            "type": "geojson",
-        });
-
         switch (typeMap){
             case "normalMap":
+                map.addSource("source",{
+                    data: geoData,
+                    type: "geojson",
+                    cluster: true,
+                    clusterMaxZoom: 16,
+                    clusterRadius: 30,
+                });
+    
                 map.addLayer({
-                    id: "points",
+                    id: 'clusters',
                     type: 'circle',
                     source: 'source',
-                    cluster: true,
-                    clusterMaxZoom: 14, // Max zoom to cluster points on
-                    clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
-                    filter: ["has", "value"],
                     paint: {
-                        'circle-radius': {
+                        'circle-color': {
                             property: 'value',
-                            type: 'exponential',
+                            type: 'interval',
                             stops: [
-                              [1000, 1],
-                              [30000, 30]
+                                [0, '#41A337'],
+                                [10000, '#2D7026'],
+                                [20000, '#0B5703'],
                             ]
                         },
-                        'circle-color': [
-                            "step", ["get", "value"],
-                            "#f1c40f",
-                            5000,
-                            "#d35400",
-                            12000,
-                            "#e67e22",
-                            20000,
-                            "#c0392b"
-                        ],
-                        'circle-opacity': 1
-                    }
+                        'circle-radius': {
+                            property: 'value',
+                            type: 'interval',
+                            stops: [
+                                [0, 20],
+                                [10000, 30],
+                                [20000, 40]
+                            ]
+                        }
+                        }
                 });
                 
                 map.addLayer({
-                    id: "circle_count",
-                    type: "symbol",
-                    source: "source",
-                    filter: ["has", "value"],
+                    id: 'cluster-count',
+                    type: 'symbol',
+                    source: 'source',
+                    filter: ["has", 'value'],
                     layout: {
-                        "text-field": "{value}",
-                        "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-                        "text-size": 0
+                        'text-field': '{value}',
+                        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                        'text-size': 12
+                    }
+                });
+
+                map.addLayer({
+                    id: 'values',
+                    type: 'circle',
+                    source: 'source',
+                    filter: ['!has', 'value'],
+                    paint: {
+                        'circle-color': '#1EF008',
+                        'circle-radius': 6,
+                        'circle-stroke-width': 1,
+                        'circle-stroke-color': '#fff'
                     }
                 });
                 break;
             
             case "heatMap":
+                map.addSource("source",{
+                    "data": geoData,
+                    "type": "geojson",
+                });
+    
                 map.addLayer({
                     id: 'trees-heat',
                     type: 'heatmap',
