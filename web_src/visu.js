@@ -14,7 +14,7 @@ function selectChart() {
 }
 
 // Add a chart
-function displayChart(transformation) {
+function displayChart(transformation, year=null) {
 
     closeDialog('dialog-chart');
 
@@ -67,7 +67,9 @@ function displayChart(transformation) {
             var chartDatasets = [{
                 label: 'Moyenne annuelle par ville',
                 data: chartData,
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 0.5)'
             }];
         break;
 
@@ -87,7 +89,9 @@ function displayChart(transformation) {
             var chartDatasets = [{
                 label: 'Valeur moyenne par redevable',
                 data: chartData,
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                borderColor: 'rgba(0, 0, 0, 0.3)'
             }];
         break;
 
@@ -108,7 +112,46 @@ function displayChart(transformation) {
             var chartDatasets = [{
                 label: (isMax ? 'Max' : 'Min') + 'imum par année',
                 data: chartData,
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                borderColor: 'rgba(0, 0, 0, 0.3)'
+            }];
+        break;
+
+        case 'city-by-year':
+            var chartData = [];
+            var cityTotal = [];
+
+            // For each city in the year
+            for (var i = 0; i < data[year].length; i++) {
+                var city = data[year][i]['Commune'];
+
+                // Check if we must add the city in the list
+                if (chartLabels.indexOf(city) === -1) {
+                    cityTotal.push(0);
+                    chartLabels.push(city);
+                    chartData.push(0);
+                }
+
+                // Get the index of the city
+                var index = chartLabels.indexOf(city);
+
+                // Add te value
+                chartData[index] += parseFloat(data[year][i]['Impôt moyen en €']);
+                cityTotal[index] += 1;
+
+            }
+
+            // Sort them
+            chartLabels = refSort(chartLabels, chartData);
+            chartData.sort(function(a, b) {return a-b});
+
+            var chartDatasets = [{
+                label: 'Impôt moyen par ville en ' + year,
+                data: chartData,
+                borderWidth: 1,
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 0.5)'
             }];
         break;
 
@@ -126,7 +169,7 @@ function displayChart(transformation) {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max: 40000
+                        max: globalMax
                     }
                 }]
             },
@@ -152,6 +195,14 @@ function displayChart(transformation) {
         '</tr></table>';
     document.getElementById(ids.content).appendChild(checkBoxes);
 
+}
+
+// Select a year for the chart
+function selectChartYear() {
+    closeDialog('dialog');
+    $(function() {
+        $('#dialog-chart-year').dialog();
+    });
 }
 
 // Select a year for the map
