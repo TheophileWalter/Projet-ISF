@@ -271,34 +271,35 @@ function addMap(title, geoData, typeMap) {
                     id: 'trees-heat',
                     type: 'heatmap',
                     source: 'source',
-                    maxzoom: 15,
+                    maxzoom: 22,
                     paint: {
                     // increase weight as diameter breast height increases
-                    'heatmap-weight': {
-                        property: 'value',
-                        type: 'exponential',
-                        stops: [
-                        [1, 0],
-                        [62, 1]
-                        ]
-                    },
+                    "heatmap-weight": [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "value"],
+                        0, 0,
+                        6, 1
+                    ],
                     // increase intensity as zoom level increases
-                    'heatmap-intensity': {
-                        stops: [
-                        [11, 1],
-                        [15, 3]
-                        ]
-                    },
+                    "heatmap-intensity": [
+                        "interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        0, 1,
+                        9, 3
+                    ],
                     // assign color values be applied to points depending on their density
-                    'heatmap-color': [
-                        'interpolate',
-                        ['linear'],
-                        ['heatmap-density'],
-                        0, 'rgba(236,222,239,0)',
-                        0.2, 'rgb(208,209,230)',
-                        0.4, 'rgb(166,189,219)',
-                        0.6, 'rgb(103,169,207)',
-                        0.8, 'rgb(28,144,153)'
+                    "heatmap-color": [
+                        "interpolate",
+                        ["linear"],
+                        ["heatmap-density"],
+                        0, "rgba(33,102,172,0)",
+                        0.2, "rgb(103,169,207)",
+                        0.4, "rgb(209,229,240)",
+                        0.6, "rgb(253,219,199)",
+                        0.8, "rgb(239,138,98)",
+                        1, "rgb(178,24,43)"
                     ],
                     // increase radius as zoom increases
                     'heatmap-radius': {
@@ -308,15 +309,75 @@ function addMap(title, geoData, typeMap) {
                         ]
                     },
                     // decrease opacity to transition into the circle layer
-                    'heatmap-opacity': {
-                        default: 1,
-                        stops: [
-                        [14, 1],
-                        [15, 0]
-                        ]
-                    },
+                    "heatmap-opacity": [
+                        "interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        7, 1,
+                        9, 0
+                    ],
                     }
                 }, 'waterway-label');
+
+                map.addLayer({
+                    "id": "heat-point",
+                    "type": "circle",
+                    "source": "source",
+                    "minzoom": 7,
+                    "paint": {
+                        "circle-radius": [
+                            "interpolate",
+                            ["linear"],
+                            ["zoom"],
+                            7, [
+                                "interpolate",
+                                ["linear"],
+                                ["get", "value"],
+                                1, 1,
+                                25000, 10
+                            ],
+                            16, [
+                                "interpolate",
+                                ["linear"],
+                                ["get", "value"],
+                                1, 5,
+                                25000, 50
+                            ]
+                        ],
+                        "circle-color": [
+                            "interpolate",
+                            ["linear"],
+                            ["get", "value"],
+                            1, "rgba(33,102,172,0)",
+                            2, "rgb(103,169,207)",
+                            3, "rgb(209,229,240)",
+                            4, "rgb(253,219,199)",
+                            5, "rgb(239,138,98)",
+                            6, "rgb(178,24,43)"
+                        ],
+                        "circle-stroke-color": "white",
+                        "circle-stroke-width": 1,
+                        "circle-opacity": [
+                            "interpolate",
+                            ["linear"],
+                            ["zoom"],
+                            7, 0,
+                            8, 1
+                        ]
+                    }
+                }, 'waterway-label');
+
+                map.addLayer({
+                    id: "cluster-count",
+                    type: "symbol",
+                    source: "source",
+                    filter: ["has", "value"],
+                    layout: {
+                        "text-field": "{value}",
+                        "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+                        "text-size": 12
+                    }
+                });
                 break;
         }       
     });
