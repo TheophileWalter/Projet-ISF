@@ -16,8 +16,20 @@ option : `$ git config credential.helper store`
 3. `$ git pull`
 4. `$ git push`
 
-## Execute scripts
-- convertCsvToJson.js : `$ node convertCsvToJson.js`
+## TODO & NEEDED List:
+- [ ] Ajouter boutons pour afficher sur le graphe
+  - [ ] moyenne des années sélectionnées par le user
+  - [ ] médiane des années sélectionnées par le user
+  - [ ] Q1 des années sélectionnées par le user
+  - [ ] Q3 des années sélectionnées par le user
+
+- [ ] Ajouter boutons pour choisir
+  - [x] ISF
+  - [ ] payeurs
+  - [ ] ISF / payeurs
+  - [ ] un ISF minimum
+  - [ ] un ISF maximum
+  - [ ] un intervale dans lequel doit se trouver l'ISF
 
 ## TODO List:
 - [x] Dossier "data/"
@@ -37,10 +49,10 @@ option : `$ git config credential.helper store`
   - [x] "load.js" : charge toutes les données des années 
   - [x] "mainInit.js" : lie les codes communes et codes postaux pour obtenir les coordonnées géographiques
   - [x] "style.css" : feuille de style de la page "index.html"
-  - [x] "tools.js" : 
-  - [x] "visu.js" : 
+  - [x] "tools.js" : code pour les différents traitements dans les graphiques
+  - [x] "visu.js" : code des différents styles de visualisations (graphiques ou cartes)
  
- - [x] Dossier "web_src/jquery/"
+- [x] Dossier "web_src/jquery/"
   - [x] Librairie pour JQuery
 
 - [ ] Dossier "web_src/chart/"
@@ -49,3 +61,7 @@ option : `$ git config credential.helper store`
   - [x] "chartjs-plugin-zoom.min.js" : 
 
 - [x] "index.html" : page pour visualiser le dashboard
+
+
+## Execute scripts
+- convertCsvToJson.js : `$ node convertCsvToJson.js`
