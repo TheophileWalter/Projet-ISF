@@ -200,11 +200,7 @@ function addMap(title, geoData, typeMap) {
                     data: geoData,
                     type: "geojson",
                     cluster: true,
-<<<<<<< HEAD
-                    clusterMaxZoom: 16,
-=======
                     clusterMaxZoom: 6,
->>>>>>> 75558e436a5e4eedb52818541ffc3f2b110f987c
                     clusterRadius: 50,
                 });
 
@@ -212,7 +208,6 @@ function addMap(title, geoData, typeMap) {
                     id: 'clusters',
                     type: 'circle',
                     source: 'source',
-                    filter: ["has", 'value'],
                     paint: {
                         'circle-color': {
                             property: 'point_count',
@@ -254,9 +249,9 @@ function addMap(title, geoData, typeMap) {
                     filter: ['!has', 'point_count'],
                     paint: {
                         'circle-color': '#1EF008',
-                        'circle-radius': 45,
+                        'circle-radius': 6,
                         'circle-stroke-width': 1,
-                        'circle-stroke-color': '#1EF008'
+                        'circle-stroke-color': '#fff'
                     }
                 });
 
