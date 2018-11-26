@@ -184,13 +184,14 @@ function addMap(title, geoData, typeMap) {
                     type: "geojson",
                     cluster: true,
                     clusterMaxZoom: 16,
-                    clusterRadius: 30,
+                    clusterRadius: 50,
                 });
     
                 map.addLayer({
                     id: 'clusters',
                     type: 'circle',
                     source: 'source',
+                    filter: ["has", 'value'],
                     paint: {
                         'circle-color': {
                             property: 'value',
@@ -232,9 +233,9 @@ function addMap(title, geoData, typeMap) {
                     filter: ['!has', 'value'],
                     paint: {
                         'circle-color': '#1EF008',
-                        'circle-radius': 6,
+                        'circle-radius': 45,
                         'circle-stroke-width': 1,
-                        'circle-stroke-color': '#fff'
+                        'circle-stroke-color': '#1EF008'
                     }
                 });
                 break;
