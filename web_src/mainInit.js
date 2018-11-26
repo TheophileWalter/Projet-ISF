@@ -1,5 +1,6 @@
 let fullLocations = {};
 let globalMax = Number.MIN_SAFE_INTEGER, globalMin = Number.MAX_SAFE_INTEGER;
+let chartList = {};
 
 function mainInit() {
 
