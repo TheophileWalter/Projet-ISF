@@ -20,6 +20,32 @@ option : `$ git config credential.helper store`
 - convertCsvToJson.js : `$ node convertCsvToJson.js`
 
 ## TODO List:
-- [ ] script nettoyage de CSV
-- [ ] script transformer CSV en JSON
-- [ ] script transformer la base des locatisations des villes en JSON
+- [x] Dossier "data/"
+  - [x] Données brutes de ISF en CSV
+  - [x] Données codes communes et postaux en CSV
+  
+- [x] Dossier "data_json/"
+  - [x] Données nettoyées de ISF en JSON
+  - [x] Données codes communes et postaux en JSON
+
+- [x] Dossier "data_prep/"
+  - [x] Sauvegarder, traiter et nettoyer les fichiers données CSV sous format JSON
+  - [x] "convertCsvToJson.js" : données CSV en JSON
+  - [x] "locationCSV2JSon.py" : codes CSV en JSON
+
+- [x] Dossier "web_src/"
+  - [x] "load.js" : charge toutes les données des années 
+  - [x] "mainInit.js" : lie les codes communes et codes postaux pour obtenir les coordonnées géographiques
+  - [x] "style.css" : feuille de style de la page "index.html"
+  - [x] "tools.js" : 
+  - [x] "visu.js" : 
+ 
+ - [x] Dossier "web_src/jquery/"
+  - [x] Librairie pour JQuery
+
+- [ ] Dossier "web_src/chart/"
+  - [x] "Chart.bundle.min.js" : 
+  - [x] "Chart.min.js" : 
+  - [x] "chartjs-plugin-zoom.min.js" : 
+
+- [x] "index.html" : page pour visualiser le dashboard
