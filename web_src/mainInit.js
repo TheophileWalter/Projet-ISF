@@ -49,8 +49,9 @@ function mainInit() {
         // Creates the map
         fullLocations[key] = {"type": "FeatureCollection", "features": preparedLocations};
 
-        // Add button to map selector
+        // Add year button to map/chart selector
         document.getElementById('dialog-map-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:selectMapType(' + key + ');" /><br />';
+        document.getElementById('dialog-chart-year').innerHTML += '<input type="button" value="' + key + '" onclick="javascript:closeDialog(\'dialog-chart-year\');displayChart(\'city-by-year\',' + key + ');" /><br />';
 
     });
 }
