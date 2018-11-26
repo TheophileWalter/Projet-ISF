@@ -54,3 +54,62 @@ function refSort (targetData, refData) {
       return targetData[index];
     });
 }
+
+// Make a canvas fit it's container
+// From https://stackoverflow.com/a/10215724
+function fitToContainer(canvas){
+    // Make it visually fill the positioned parent
+    canvas.style.width ='100%';
+    canvas.style.height='100%';
+    // ...then set the internal size to match
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetWidth;
+}
+
+// Return the length of an on bject
+function oLength(o) {
+    var c = 0;
+    Object.keys(o).forEach(function() {
+        c++;
+    });
+    return c;
+}
+
+// Draw a line in a context
+function drawLine(ctx, fromX, fromY, toX, toY, color='black') {
+    var oldColor = ctx.fillStyle;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(fromX, fromY);
+    ctx.lineTo(toX, toY);
+    ctx.stroke();
+    ctx.strokeStyle = oldColor;
+}
+
+// Converts HSV color to RGV
+// From https://stackoverflow.com/a/17243070
+function HSVtoRGB(h, s, v) {
+    var r, g, b, i, f, p, q, t;
+    if (arguments.length === 1) {
+        s = h.s, v = h.v, h = h.h;
+    }
+    i = Math.floor(h * 6);
+    f = h * 6 - i;
+    p = v * (1 - s);
+    q = v * (1 - f * s);
+    t = v * (1 - (1 - f) * s);
+    switch (i % 6) {
+        case 0: r = v, g = t, b = p; break;
+        case 1: r = q, g = v, b = p; break;
+        case 2: r = p, g = v, b = t; break;
+        case 3: r = p, g = q, b = v; break;
+        case 4: r = t, g = p, b = v; break;
+        case 5: r = v, g = p, b = q; break;
+    }
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    };
+}

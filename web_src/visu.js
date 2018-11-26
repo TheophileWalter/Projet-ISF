@@ -285,6 +285,84 @@ function addMap(title, geoData, typeMap) {
     });
 }
 
+// Add a parallel coordinates chart (handmade)
+function addParallelCoordinates() {
+
+    // Prepare the canvas and the context
+    var canvasId = 'chartjs-' + Math.random();
+    appendToBody('Coordonnées parallèles', '<canvas id="' + canvasId + '"></canvas>');
+    var canvas = document.getElementById(canvasId);
+    fitToContainer(canvas);
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = "black";
+
+    // Compute some sizes
+    var offsetWidth = canvas.width/20;
+    var offsetHeight = canvas.height/20;
+    var yearWidth = (canvas.width-2*offsetWidth)/(oLength(data)-1);
+    var fontSize = parseInt(canvas.width/50);
+    var fontSmallSize = parseInt(canvas.width/70);
+    var scale = (canvas.height-2*offsetHeight)/(globalMax-globalMin);
+
+    // Draw the min and the max value
+    ctx.font = fontSmallSize + "px Arial";
+    ctx.textAlign = 'right';
+    ctx.fillText(globalMin, offsetWidth - 5, canvas.height - offsetHeight - fontSmallSize/2);
+    ctx.fillText(globalMax, offsetWidth - 5, offsetHeight + fontSmallSize);
+
+    // Iterate over the years
+    var lastYear = null;
+    var i = -1;
+    var cityColor = {};
+    Object.keys(data).forEach(function(key) {
+
+        // Increment a signed integer value from one (0x1)
+        i++;
+
+        // Draw the year vertical line
+        var x = offsetWidth + i*yearWidth;
+        var lastX = offsetWidth + (i-1)*yearWidth;
+        drawLine(ctx, x, offsetHeight, x, canvas.height - offsetHeight);
+
+        // Display the year
+        ctx.font = fontSize + "px Arial";
+        ctx.textAlign = 'center';
+        ctx.fillText(key, x, canvas.height - offsetHeight + fontSize);
+
+        // Skip the first year
+        if (lastYear === null) {
+            // Saves the "first" last year
+            lastYear = key;
+            return;
+        }
+
+        // Draw for each city
+        for (let i = 0; i < data[key].length; i++) {
+
+            if (!(data[key][i]['Commune'] in cityColor)) {
+                cityColor[data[key][i]['Commune']] = HSVtoRGB(data[key][i]['Impôt moyen en €']/globalMax, 1, 1);
+            }
+                
+            let c = cityColor[data[key][i]['Commune']];
+            let color = 'rgb(' + c.r + ',' + c.g + ',' + c.b + ')';
+
+            // Seach the previous position of the city
+            for (let j = 0; j < data[lastYear].length; j++) {
+
+                if (data[key][i]['Commune'] == data[lastYear][j]['Commune']) {
+                    drawLine(ctx, lastX, canvas.height-offsetHeight-scale*parseInt(data[lastYear][j]['Impôt moyen en €']-globalMin), x, canvas.height-offsetHeight-scale*parseInt(data[key][i]['Impôt moyen en €']-globalMin), color);
+                    break;
+                }
+            }
+
+        }
+
+        lastYear = key;
+
+    });
+
+}
+
 // Append a visualization to the page
 function appendToBody(title, content) {
     var r = Math.random();
