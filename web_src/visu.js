@@ -442,14 +442,14 @@ function addMap(title, geoData, typeMap) {
                 });
                 break;
 
-                case "heatMap1":
+            case "heatMap1":
                 map.addSource("source",{
                     "data": geoData,
                     "type": "geojson",
                 });
     
                 map.addLayer({
-                    id: 'trees-heat',
+                    id: 'trees-heat1',
                     type: 'heatmap',
                     source: 'source',
                     maxzoom: 22,
@@ -501,7 +501,7 @@ function addMap(title, geoData, typeMap) {
                 }, 'waterway-label');
 
                 map.addLayer({
-                    "id": "heat-point",
+                    "id": "heat-point1",
                     "type": "circle",
                     "source": "source",
                     "minzoom": 7,
@@ -522,7 +522,7 @@ function addMap(title, geoData, typeMap) {
                                 ["linear"],
                                 ["get", "redevables"],
                                 1, 5,
-                                25000, 50
+                                2500, 50
                             ]
                         ],
                         "circle-color": [
@@ -549,10 +549,10 @@ function addMap(title, geoData, typeMap) {
                 }, 'waterway-label');
 
                 map.addLayer({
-                    id: "cluster-count",
+                    id: "cluster-count1",
                     type: "symbol",
                     source: "source",
-                    filter: ["has", "value"],
+                    filter: ["has", "redevables"],
                     layout: {
                         "text-field": "{value}",
                         "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
