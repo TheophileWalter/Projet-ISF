@@ -157,6 +157,9 @@ function displayChart(transformation, year=null) {
 
     }
 
+    var maxY = 0;
+    for (; maxY-5e3 < globalMax; maxY += 5e3);
+
     // Add data to histogram
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -169,7 +172,7 @@ function displayChart(transformation, year=null) {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        max: globalMax
+                        max: maxY
                     }
                 }]
             },
@@ -227,6 +230,14 @@ function selectMapType(year) {
 function addMapButton(type, year) {
     addMap('Carte de France ' + year, fullLocations[year], type);
     closeDialog('dialog-map-type');
+}
+
+// Disolays the raw data
+function addRawData() {
+    var v = appendToBody("Données JSON brutes", renderJSON(data));
+    var e = document.getElementById(v.content);
+    e.style.maxHeight = "500px";
+    e.style.overflow = "auto";
 }
 
 // Add a map to the page
