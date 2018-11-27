@@ -223,7 +223,7 @@ function selectMapType(year) {
     document.getElementById('dialog-map-year-heat').year = year;
     document.getElementById('dialog-map-year-heat1').year = year;
     $(function() {
-        $('#dialog-map-type').dialog({width: 500});
+        $('#dialog-map-type').dialog();
     });
 }
 
@@ -360,7 +360,7 @@ function addMap(title, geoData, typeMap) {
                         ["linear"],
                         ["zoom"],
                         0, 1,
-                        9, 3
+                        20, 3
                     ],
                     // assign color values be applied to points depending on their density
                     "heatmap-color": [
@@ -407,13 +407,13 @@ function addMap(title, geoData, typeMap) {
                                 ["linear"],
                                 ["get", "value"],
                                 1, 1,
-                                25000, 10
+                                25000, 20
                             ],
                             16, [
                                 "interpolate",
                                 ["linear"],
                                 ["get", "value"],
-                                1, 5,
+                                1, 10,
                                 25000, 50
                             ]
                         ],
@@ -526,14 +526,14 @@ function addMap(title, geoData, typeMap) {
                                 ["linear"],
                                 ["get", "redevables"],
                                 1, 1,
-                                25000, 10
+                                10000, 10
                             ],
                             16, [
                                 "interpolate",
                                 ["linear"],
                                 ["get", "redevables"],
-                                1, 5,
-                                2500, 50
+                                1, 20,
+                                10000, 50
                             ]
                         ],
                         "circle-color": [
