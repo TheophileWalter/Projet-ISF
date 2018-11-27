@@ -424,9 +424,9 @@ function addMap(title, geoData, typeMap) {
                             1, "rgba(33,102,172,0)",
                             2, "rgb(103,169,207)",
                             3, "rgb(209,229,240)",
-                            4, "rgb(253,219,199)",
-                            5, "rgb(239,138,98)",
-                            6, "rgb(178,24,43)"
+                            1000, "rgb(253,219,199)",
+                            10000, "rgb(239,138,98)",
+                            20000, "rgb(178,24,43)"
                         ],
                         "circle-stroke-color": "white",
                         "circle-stroke-width": 1,
@@ -543,9 +543,9 @@ function addMap(title, geoData, typeMap) {
                             1, "rgba(33,102,172,0)",
                             2, "rgb(103,169,207)",
                             3, "rgb(209,229,240)",
-                            4, "rgb(253,219,199)",
-                            5, "rgb(239,138,98)",
-                            6, "rgb(178,24,43)"
+                            40, "rgb(253,219,199)",
+                            1000, "rgb(239,138,98)",
+                            10000, "rgb(178,24,43)"
                         ],
                         "circle-stroke-color": "white",
                         "circle-stroke-width": 1,
