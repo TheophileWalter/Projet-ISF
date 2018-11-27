@@ -202,7 +202,7 @@ function displayChart(transformation, year=null) {
 
 // Select a year for the chart
 function selectChartYear() {
-    closeDialog('dialog');
+    closeDialog('dialog-chart');
     $(function() {
         $('#dialog-chart-year').dialog();
     });
