@@ -43,9 +43,9 @@
     <div id="dialog-map-year" class="dialog" title="Choisissez l'année de la carte"></div>
     <div id="dialog-chart-year" class="dialog" title="Choisissez l'année du graphique"></div>
     <div id="dialog-map-type" class="dialog" title="Choisissez votre visualisation">
-        <input type="button" id="dialog-map-year-normal" value="Carte de points par commune" onclick="javascript:addMapButton('normalMap', this.year);" /><br />
-        <input type="button" id="dialog-map-year-heat" value="Carte de chaleur par impôt moyen" onclick="javascript:addMapButton('heatMap', this.year);" /><br />
-        <input type="button" id="dialog-map-year-heat1" value="Carte de chaleur par redevable" onclick="javascript:addMapButton('heatMap1', this.year);" /><br />
+        <input type="button" id="dialog-map-year-normal" value="Carte de points - Nombre de communes" onclick="javascript:addMapButton('normalMap', this.year);" /><br />
+        <input type="button" id="dialog-map-year-heat" value="Carte de chaleur - Impôt moyen" onclick="javascript:addMapButton('heatMap', this.year);" /><br />
+        <input type="button" id="dialog-map-year-heat1" value="Carte de chaleur - Nombre de redevables" onclick="javascript:addMapButton('heatMap1', this.year);" /><br />
     </div>
     <div id="dialog-chart" class="dialog" title="Choisissez la représentation">
         <input type="button" value="Moyenne annuelle par ville" onclick="javascript:displayChart('yearly-mean-by-city');closeDialog('dialog-map-year');" /><br />
