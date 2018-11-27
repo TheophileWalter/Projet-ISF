@@ -430,6 +430,125 @@ function addMap(title, geoData, typeMap) {
                     }
                 });
                 break;
+
+                case "heatMap1":
+                map.addSource("source",{
+                    "data": geoData,
+                    "type": "geojson",
+                });
+    
+                map.addLayer({
+                    id: 'trees-heat',
+                    type: 'heatmap',
+                    source: 'source',
+                    maxzoom: 22,
+                    paint: {
+                    // increase weight as diameter breast height increases
+                    "heatmap-weight": [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "redevables"],
+                        0, 0,
+                        6, 1
+                    ],
+                    // increase intensity as zoom level increases
+                    "heatmap-intensity": [
+                        "interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        0, 1,
+                        9, 3
+                    ],
+                    // assign color values be applied to points depending on their density
+                    "heatmap-color": [
+                        "interpolate",
+                        ["linear"],
+                        ["heatmap-density"],
+                        0, "rgba(33,102,172,0)",
+                        0.2, "rgb(103,169,207)",
+                        0.4, "rgb(209,229,240)",
+                        0.6, "rgb(253,219,199)",
+                        0.8, "rgb(239,138,98)",
+                        1, "rgb(178,24,43)"
+                    ],
+                    // increase radius as zoom increases
+                    'heatmap-radius': {
+                        stops: [
+                        [11, 15],
+                        [15, 20]
+                        ]
+                    },
+                    // decrease opacity to transition into the circle layer
+                    "heatmap-opacity": [
+                        "interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        7, 1,
+                        9, 0
+                    ],
+                    }
+                }, 'waterway-label');
+
+                map.addLayer({
+                    "id": "heat-point",
+                    "type": "circle",
+                    "source": "source",
+                    "minzoom": 7,
+                    "paint": {
+                        "circle-radius": [
+                            "interpolate",
+                            ["linear"],
+                            ["zoom"],
+                            7, [
+                                "interpolate",
+                                ["linear"],
+                                ["get", "redevables"],
+                                1, 1,
+                                25000, 10
+                            ],
+                            16, [
+                                "interpolate",
+                                ["linear"],
+                                ["get", "redevables"],
+                                1, 5,
+                                25000, 50
+                            ]
+                        ],
+                        "circle-color": [
+                            "interpolate",
+                            ["linear"],
+                            ["get", "redevables"],
+                            1, "rgba(33,102,172,0)",
+                            2, "rgb(103,169,207)",
+                            3, "rgb(209,229,240)",
+                            4, "rgb(253,219,199)",
+                            5, "rgb(239,138,98)",
+                            6, "rgb(178,24,43)"
+                        ],
+                        "circle-stroke-color": "white",
+                        "circle-stroke-width": 1,
+                        "circle-opacity": [
+                            "interpolate",
+                            ["linear"],
+                            ["zoom"],
+                            7, 0,
+                            8, 1
+                        ]
+                    }
+                }, 'waterway-label');
+
+                map.addLayer({
+                    id: "cluster-count",
+                    type: "symbol",
+                    source: "source",
+                    filter: ["has", "value"],
+                    layout: {
+                        "text-field": "{value}",
+                        "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+                        "text-size": 12
+                    }
+                });
+                break;
         }       
     });
 }
