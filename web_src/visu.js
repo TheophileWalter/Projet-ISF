@@ -221,6 +221,7 @@ function selectMapType(year) {
     closeDialog('dialog-map-year');
     document.getElementById('dialog-map-year-normal').year = year;
     document.getElementById('dialog-map-year-heat').year = year;
+    document.getElementById('dialog-map-year-heat1').year = year;
     $(function() {
         $('#dialog-map-type').dialog();
     });
