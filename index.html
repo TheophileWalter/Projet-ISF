@@ -18,6 +18,7 @@
     <script type="text/javascript" src="web_src/mainInit.js" defer></script>
     <script type="text/javascript" src="web_src/load.js" defer></script>
     <script type="text/javascript" src="web_src/visu.js" defer></script>
+    <script type="text/javascript" src="web_src/json-explorer.js" defer></script>
 </head>
 <body>
     <div id="navbar">
@@ -37,6 +38,7 @@
         <input type="button" value="Carte simple" onclick="javascript:selectMapYear();" /><br />
         <input type="button" value="Histogramme" onclick="javascript:selectChart();" /><br />
         <input type="button" value="Coordonnées parallèles" onclick="javascript:addParallelCoordinates();closeDialog('dialog');" /><br />
+        <input type="button" value="Données brutes" onclick="javascript:addRawData();closeDialog('dialog');" /><br />
     </div>
     <div id="dialog-map-year" class="dialog" title="Choisissez l'année de la carte"></div>
     <div id="dialog-chart-year" class="dialog" title="Choisissez l'année du graphique"></div>

@@ -119,3 +119,36 @@ input[type="button"] {
 .mapboxgl-ctrl-bottom-right {
     display: none!important;
 }
+
+/* For the JSon explorer */
+.json-object, .json-array {
+    font-family: monospace;
+    padding-left: 18px;
+    margin-left: 2px;
+    border-left: 1px solid #CCCCCC;
+    display: none;
+}
+
+.json-pointer, .json-pointer-expended, .json-pointer-collapsed {
+    cursor: pointer;
+    display: inline;
+}
+
+.json-pointer-expended:before {
+    content: "\25BC"; /* Flèche vers le bas */
+    color: #AAAAAA;
+}
+
+.json-pointer-collapsed:before {
+    content: "\25BA"; /* Flèche vers la droite */
+    color: #AAAAAA;
+}
+
+.json-collapsed {
+    display: inline;
+    cursor: pointer;
+}
+
+.json-collapsed:after {
+    content: " ... ";
+}
