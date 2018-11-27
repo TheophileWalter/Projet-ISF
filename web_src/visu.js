@@ -555,7 +555,7 @@ function addMap(title, geoData, typeMap) {
                     source: "source",
                     filter: ["has", "redevables"],
                     layout: {
-                        "text-field": "{value}",
+                        "text-field": "{redevables}",
                         "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
                         "text-size": 12
                     }
