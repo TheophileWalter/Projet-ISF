@@ -18,7 +18,7 @@ function locationFinder(code, name) {
 }
 
 // Escape the HTML special chars
-function escapeHtml(unsafe) {
+function toolsEscapeHtml(unsafe) {
     return unsafe
          .replace(/&/g, "&amp;")
          .replace(/</g, "&lt;")
