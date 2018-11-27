@@ -229,7 +229,17 @@ function selectMapType(year) {
 
 // Called on click on add map button
 function addMapButton(type, year) {
-    addMap('Carte de France ' + year, fullLocations[year], type);
+    switch (type) {
+        case 'normal':
+            addMap('Carte de France ' + year + ' - Impôt moyen', fullLocations[year], type);   
+        break; 
+        case 'heatMap':
+            addMap('Carte de France ' + year + ' - Nombre de villes', fullLocations[year], type);   
+            break; 
+        case 'heatMap1':
+            addMap('Carte de France ' + year + ' - Nombre de redevables', fullLocations[year], type);   
+            break; 
+    }
     closeDialog('dialog-map-type');
 }
 
